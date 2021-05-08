@@ -19,6 +19,7 @@ Route::get('/about', 'HomeController@about');
 Route::get('/partners', 'HomeController@partners');
 Route::get('/faqs', 'HomeController@faqs');
 Route::get('/core/{name}/profile', 'HomeController@coreProfile');
+Route::view('/token', 'member.token');
 
 Route::group(['middleware' => ['verified']], function () {
   Route::get('/ticket/payment', 'TicketController@payment');
