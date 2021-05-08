@@ -2,7 +2,7 @@
 
 @section('hero')
 <div style="flex: 1;"></div>
-<section class="_tedx_section _tedx_section_about">
+<section class="_tedx_section _tedx_section_partner">
     <div style="display: inline-block;">
         <div class="_tedx_section_title_overlay">
             <div class="_tedx_section_title_wrapper">

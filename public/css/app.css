@@ -4025,6 +4025,22 @@ textarea {
   }
 }
 
+._tedx_section_partner ._tedx_section_title_overlay {
+  padding: 25px 0 90px;
+}
+
+@media only screen and (min-width: 576px) {
+  ._tedx_section_partner ._tedx_section_title_overlay {
+    padding: 25px 0 60px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_section_partner ._tedx_section_title_overlay {
+    padding: 50px 0 70px;
+  }
+}
+
 ._tedx_section_faqs ._tedx_section_title_overlay {
   padding: 25px 0 40px;
 }
