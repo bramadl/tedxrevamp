@@ -35,8 +35,8 @@
 
     ._tedx_ticket {
         background: linear-gradient(to left bottom, #1a1a1a, #111111);
-        width: 100%;
-        height: 180px;
+        max-width: 100%;
+        height: auto;
         @include md { 
             width: 100%;
             height: 320px;
@@ -53,6 +53,7 @@
         justify-content: space-between;
 
         &_left {
+            flex: 1;
             padding: 1rem;
             display: flex;
             align-items: flex-start;
@@ -63,7 +64,8 @@
                 line-height: 0;
 
                 img {
-                    width: 100px;
+                    width: 75px;
+                    @include sm { width: 125px }
                     @include md { width: 150px; }
                 }
             }
@@ -71,7 +73,7 @@
             ._tedx_ticket_title {
                 h2 {
                     text-transform: uppercase;
-                    font-size: 1rem;
+                    font-size: .75rem;
                     @include md { font-size: 1.5rem; }
                     font-family: "Open Sans", sans-serif;
                     font-weight: 800;
@@ -113,13 +115,9 @@
 
         &_right {
             width: 250px;
-            height: 100%;
+            height: auto;
             @include md { width: 360px; }
             @include lg { width: 420px; }
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            position: relative;
 
             svg {
                 width: 100%;

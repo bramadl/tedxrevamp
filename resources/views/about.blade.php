@@ -337,11 +337,19 @@
 
 <div id="timelineTedx" data-scroll-section>
   <div class="draw-line-height">
-    <svg id="line-svg" width="110" height="1449" viewBox="0 0 110 1449" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path id="line-path" d="M1 1C37.1667 38 109.5 135.5 109.5 229.5C109.5 347 1 469.5 1 672.5C1 875.5 109.5 910 109.5 1018.5C109.5 1127 1 1222 1 1448.5" stroke="white" />
+    <svg id="line-svg" width="124" height="1462" viewBox="0 0 124 1462" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8 8C44.1667 45 116.5 142.5 116.5 236.5C116.5 354 8 476.5 8 679.5C8 882.5 116.5 917 116.5 1025.5C116.5 1134 8 1229 8 1455.5" stroke="white" />
+      <circle cx="8" cy="8" r="8" fill="white" />
+      <circle cx="116" cy="249" r="8" fill="white" />
+      <circle cx="40" cy="490" r="8" fill="white" />
+      <circle cx="11" cy="732" r="8" fill="white" />
+      <circle cx="106" cy="972" r="8" fill="white" />
+      <circle cx="55" cy="1213" r="8" fill="white" />
+      <circle cx="8" cy="1454" r="8" fill="white" />
     </svg>
+
+
     <div class="_tedx_timeline _tedx_timeline_one">
-      <div class="indicator"></div>
       <div class="_tedx_timeline_container">
         <div>
           <h1>Pendaftaran Elaborasi Ekspresi</h1>
@@ -350,7 +358,6 @@
       </div>
     </div>
     <div class="_tedx_timeline _tedx_timeline_two">
-      <div class="indicator"></div>
       <div class="_tedx_timeline_container">
         <div>
           <h1>Elaborasi Ekspresi</h1>
@@ -359,7 +366,6 @@
       </div>
     </div>
     <div class="_tedx_timeline _tedx_timeline_three">
-      <div class="indicator"></div>
       <div class="_tedx_timeline_container">
         <div>
           <h1>Gerai Sorai</h1>
@@ -368,7 +374,6 @@
       </div>
     </div>
     <div class="_tedx_timeline _tedx_timeline_four">
-      <div class="indicator"></div>
       <div class="_tedx_timeline_container">
         <div>
           <h1>Pendaftaran Loka Hasta Karya</h1>
@@ -377,7 +382,6 @@
       </div>
     </div>
     <div class="_tedx_timeline _tedx_timeline_five">
-      <div class="indicator"></div>
       <div class="_tedx_timeline_container">
         <div>
           <h1>Loka Hasta Karya</h1>
@@ -386,7 +390,6 @@
       </div>
     </div>
     <div class="_tedx_timeline _tedx_timeline_six">
-      <div class="indicator"></div>
       <div class="_tedx_timeline_container">
         <div>
           <h1>Virtual Exhibition</h1>
@@ -395,7 +398,6 @@
       </div>
     </div>
     <div class="_tedx_timeline _tedx_timeline_seven">
-      <div class="indicator"></div>
       <div class="_tedx_timeline_container">
         <div>
           <h1>Puncak Acara</h1>

@@ -5,7 +5,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 150vh;
+        height: 100vh;
+        @include md { height: 150vh; }
     }
 
     #line-svg {
@@ -20,18 +21,10 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        max-width: 120px;
-        @include lg { max-width: 100%; }
-
-        .indicator {
-            width: .5rem;
-            height: .5rem;
-            @include md {
-              width: 1rem;
-              height: 1rem;
-            }
-            background: white;
-            border-radius: 50%;
+        max-width: 180px;
+        @include md {
+            max-width: 100%;
+            white-space: nowrap;
         }
 
         h1 {
@@ -58,15 +51,10 @@
     ._tedx_timeline_five,
     ._tedx_timeline_seven {
         text-align: right;
+        margin-right: 1rem;
+        @include md { margin-right: 2rem; }
+        @include lg { margin-right: 50px; }
         right: 50%;
-
-        .indicator {
-            order: 1;
-            margin-left: 1rem;
-            @include md { margin-left: 50px; }
-            @include lg { margin-left: 75px; }
-            @include xl { margin-left: 100px; }
-        }
     }
 
     ._tedx_timeline_two,
@@ -74,69 +62,64 @@
     ._tedx_timeline_six,
     ._tedx_timeline_eight {
         text-align: left;
+        margin-left: 1rem;
+        @include md { margin-left: 2rem; }
+        @include lg { margin-left: 50px; }
         left: 50%;
-
-        .indicator {
-            order: 0;
-            margin-right: 25px;
-            @include md { margin-right: 50px; }
-            @include lg { margin-right: 75px; }
-            @include xl { margin-right: 100px; }
-        }
     }
 
     ._tedx_timeline_one {
         top: 0;
         transform: translate(-36px, -50%);
-        @include lg { transform: translate(-34px, -50%); }
+        @include lg { transform: translate(-42px, -50%); }
         @include xl { transform: translate(-38px, -50%); }
     }
 
     ._tedx_timeline_two {
         top: 16.67%;
         transform: translate(32px, -50%);
-        @include md { transform: translate(28px, -50%); }
-        @include lg { transform: translate(32px, -50%); }
+        @include md { transform: translate(30px, -50%); }
+        @include lg { transform: translate(44px, -50%); }
         @include xl { transform: translate(38px, -50%); }
     }
 
     ._tedx_timeline_three {
         top: 33.34%;
-        transform: translate(20px, -50%);
-        @include md { transform: translate(24px, -50%); }
-        @include lg { transform: translate(-8px, -50%); }
+        transform: translate(-20px, -50%);
+        @include md { transform: translate(-8px, -50%); }
+        @include lg { transform: translate(-14px, -50%); }
         @include xl { transform: translate(-10px, -50%); }
     }
 
     ._tedx_timeline_four {
         top: 50%;
-        transform: translate(-32px, -50%);
-        @include md { transform: translate(-36px, -50%); }
-        @include lg { transform: translate(-46px, -50%); }
+        transform: translate(-12px, -50%);
+        @include md { transform: translate(-46px, -50%); }
+        @include lg { transform: translate(-58px, -50%); }
         @include xl { transform: translate(-52px, -50%); }
     }
 
     ._tedx_timeline_five {
         top: 66.67%;
-        transform: translate(-34px, -50%);
-        @include md { transform: translate(-30px, -50%); }
-        @include lg { transform: translate(42px, -50%); }
+        transform: translate(4px, -50%);
+        @include md { transform: translate(40px, -50%); }
+        @include lg { transform: translate(50px, -50%); }
         @include xl { transform: translate(46px, -50%); }
     }
 
     ._tedx_timeline_six {
         top: 83.34%;
-        transform: translate(8px, -50%);
-        @include md { transform: translate(4px, -50%); }
-        @include lg { transform: translate(-12px, -50%); }
+        transform: translate(20px, -50%);
+        @include md { transform: translate(-14px, -50%); }
+        @include lg { transform: translate(-16px, -50%); }
         @include xl { transform: translate(-14px, -50%); }
     }
 
     ._tedx_timeline_seven {
         top: 100%;
-        transform: translate(34px, -50%);
-        @include md { transform: translate(38px, -50%); }
-        @include lg { transform: translate(-32px, -50%); }
+        transform: translate(-50%, -50%);
+        @include md { transform: translate(-30px, -50%); }
+        @include lg { transform: translate(-44px, -50%); }
         @include xl { transform: translate(-38px, -50%); }
     }
 }

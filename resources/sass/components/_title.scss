@@ -1,7 +1,7 @@
 ._tedx_section_title_overlay {
   border-top: 1px solid $red-25;
   border-bottom: 1px solid $red-25;
-  padding: 25px 0 95px;
+  padding: 25px 0 140px;
   @include md { padding: 50px 0px 120px; }
   display: inline-block;
   position: relative;
@@ -15,7 +15,7 @@
 
     h2 {
       color: $white-25;
-      font-size: 4rem;
+      font-size: 3rem;
       @include md { font-size: 8rem; }
       @include lg { font-size: 10rem; }
       font-family: 'Open Sans', sans-serif;
@@ -43,22 +43,18 @@
       text-transform: uppercase;
       letter-spacing: 4px;
     }
-
-    p {
-      // margin-top: 1rem;
-    }
   }
 }
 
 ._tedx_section_speakers
 ._tedx_section_title_overlay {
-  padding: 25px 0 85px;
+  padding: 25px 0 100px;
   @include md { padding: 50px 0 110px; }
 }
 
 ._tedx_section_anima
 ._tedx_section_title_overlay {
-  padding: 25px 0 75px;
+  padding: 25px 0 120px;
   @include md { padding: 50px 0 100px; }
 }
 
@@ -70,19 +66,19 @@
 
 ._tedx_section_core
 ._tedx_section_title_overlay {
-  padding: 25px 0 50px;
+  padding: 25px 0 90px;
   @include md { padding: 50px 0 75px; }
 }
 
 ._tedx_section_teams
 ._tedx_section_title_overlay {
-  padding: 25px 0 50px;
+  padding: 25px 0 100px;
   @include md { padding: 50px 0 75px; }
 }
 
 ._tedx_section_timeline
 ._tedx_section_title_overlay {
-  padding: 25px 0 65px;
+  padding: 25px 0 145px;
   @include md { padding: 50px 0 90px; }
 }
 
