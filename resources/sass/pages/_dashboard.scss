@@ -64,6 +64,7 @@
             font-size: 1.25rem;
             @include md {
                 font-size: 1.5rem;
+                margin-bottom: 0.85rem;
             }
             @include lg {
                 font-size: 2rem;
@@ -79,31 +80,44 @@
             color: $white;
             font-size: .85rem;
             font-weight: 300;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
 
             @include lg {
                 font-size: 1.2rem;
             }
 
-            &::after,
-            &::before {
-                content: "";
-                position: absolute;
-                background-color: $white;
-                top: 50%;
-                left: 100%;
-                transform: translate(1rem, -50%);
-            }
-
-            &::after {
+            .line {
+                border: 1px solid white;
+                border-radius: 1px;
                 width: 100px;
-                height: 1px;
+                margin: 0 1rem;
+                position: relative;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    background-color: $white;
+                    top: 50%;
+                    left: 0;
+                    transform: translate(-50%, -50%);
+                }
+    
+                &::before {
+                    width: .25rem;
+                    height: .25rem;
+                    border-radius: 50%;
+                }
             }
 
-            &::before {
-                width: .25rem;
-                height: .25rem;
-                border-radius: 50%;
+            a {
+                color: $white-50;
+                font-size: 0.9rem;
+                transition: .4s $cubiz-bezier;
+
+                &:hover {
+                    color: $white;
+                }
             }
         }
     }

@@ -21,9 +21,8 @@ Route::get('/faqs', 'HomeController@faqs');
 Route::get('/core/{name}/profile', 'HomeController@coreProfile');
 
 Route::group(['middleware' => ['verified']], function () {
-  Route::get('/ticket/payment', 'TicketController@payment');
+  Route::get('/ticket/payment', 'TicketController@payment')->name('payment');
   Route::post('/ticket/payment', 'TicketController@storePayment');
-  Route::get('/ticket/invoice', 'TicketController@invoice');
 });
 
 Route::group(['prefix' => '/member'], function () {
@@ -45,8 +44,10 @@ Route::group(['prefix' => '/member'], function () {
     Route::get('/login', 'AuthController@login')->name('login');
   });
   
-  Route::group(['middleware' => 'auth', 'name' => 'member'], function () {
+  Route::group(['middleware' => 'auth', 'name' => 'member.', 'as' => 'member.'], function () {
     Route::get('/dashboard', 'MemberController@dashboard')->name('dashboard');
+    Route::get('/pembelian-ticket', 'MemberController@ticket')->name('ticket');
     Route::get('/kelola-akun', 'MemberController@profile')->name('profile');
+    Route::put('/kelola-akun', 'MemberController@updateProfile');
   });
 });

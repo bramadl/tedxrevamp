@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <form action="{{ url('/ticket/payment') }}" method="POST">
+  <form action="{{ url('/ticket/payment') }}" method="POST" enctype="multipart/form-data">
     @csrf
     <div>
       <label for="first_name">Nama Depan</label>
@@ -29,7 +29,7 @@
     </div>
     <div>
       <label for="street_address">Alamat Rumah</label>
-      <textarea name="street_address" value="{{ $user->street_address }}" id="street_address" cols="30" rows="10"></textarea>
+      <textarea name="street_address" readonly id="street_address" cols="30" rows="10">{{ $user->street_address }}</textarea>
     </div>
     <div>
       <label for="type">Tipe Tiket</label>

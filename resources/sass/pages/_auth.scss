@@ -111,15 +111,6 @@
             box-sizing: border-box;
         }
 
-        .text-error {
-            margin-top: -.5rem;
-            display: block;
-            text-align: left;
-            font-size: .75rem;
-            font-style: italic;
-            color: $red;
-        }
-
         ._tedx_form_group {
             display: grid;
             grid-template-columns: repeat(1, 1fr);
@@ -164,4 +155,21 @@
             background: darken($red, 5%);
         }
     }
+}
+
+.text-error,
+.text-error-alt {
+    display: block;
+    text-align: left;
+    font-size: .75rem;
+    font-style: italic;
+    color: $red;
+}
+
+.text-error {
+    margin-top: -.5rem;
+}
+
+.text-error-alt {
+    margin-top: .5rem;
 }
