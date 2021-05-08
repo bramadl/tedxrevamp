@@ -57,7 +57,9 @@
                 z-index: -1;
             }
         }
-        input, textarea {
+
+        input, 
+        textarea {
             width: 100%;
             background: none;
             outline: none;
@@ -65,7 +67,7 @@
             border-bottom: 1px solid $white-50;
             padding: 1rem;
             color: $white;
-            font-family: 'Open Sans' sans-serif;
+            font-family: 'Open Sans', sans-serif;
         }
     }
     ._tedx_request_form_button {

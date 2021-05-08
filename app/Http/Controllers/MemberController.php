@@ -45,7 +45,11 @@ class MemberController extends Controller
 
     public function ticket()
     {
-        $ticketUser = UserTicket::with('payment')->first();
+        $ticketUser = UserTicket::with('payment')
+                        ->whereHas('payment', function ($query) {
+                            $query->where('user_id', Auth::id());
+                        })
+                        ->first();
 
         return view('member.ticket', [
             'ticketUser' => $ticketUser
