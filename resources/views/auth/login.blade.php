@@ -61,6 +61,14 @@
         })
     </script>
     @endif
+    @if (session('error'))
+    <script>
+        Toast.fire({
+            icon: 'error',
+            title: @json(session('error'))
+        })
+    </script>
+    @endif
 </body>
 
 </html>

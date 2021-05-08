@@ -1,157 +1,95 @@
-@extends('layouts.master')
+@extends('layouts.member')
 
-@section('hero')
-<div style="flex: 1;"></div>
-<section class="_tedx_section _tedx_section_about dashboard">
-    <div style="display: inline-block;">
-        <div class="_tedx_section_title_overlay dashboard">
-            <div class="_tedx_section_title_wrapper">
-                <div class="_tedx_section_title dashboard">
-                    <h2 data-scroll data-scroll-direction="horizontal" data-scroll-speed="2">Dashboard</h2>
-                </div>
-            </div>
-        </div>
-        <div class="_tedx_section_about_cta _tedx_section_dashboard_cta">
-            <div>
-                <p class="_tedx_link">Hello, {{ Auth::user()->first_name }} {{ Auth::user()->last_name }}!</p>
-            </div>
-            <div>
-                <form action="{{ url('/member/logout') }}" method="POST">
-                    @csrf
-                    <button type="submit" class="_tedx_link" cursor-class="overlay">Logout Account</button>
-                </form>
-            </div>
-        </div>
-</section>
-<div style="flex: 1;"></div>
+@section('link')
+<a href="{{ url('/') }}" cursor-class="hover">Kembali Ke Halaman Utama</a>
 @endsection
 
 @section('content')
-<div data-scroll-section>
-    <div class="_tedx_dashboard_content_container">
-        <!-- STATUS USER -->
-        <div class="_tedx_dashboard_status_wrapper">
-            <div class="_tedx_dashboard_status_caption">
-                <h2><span>TEDx</span>UniversitasBrawijaya2021</h2>
-                <p>Manifestasi Peradaban</p>
-            </div>
-            <div class="_tedx_dashboard_status_button">
-                <div class="_tedx_dashboard_status_audiens">
-                    <p>{{ Auth::user()->role === 'user' ? 'Audience' : Auth::user()->role }}</p>
-                    <a href="{{ url('member/resend/confirm') }}" target="_blank" style="{{
-                            Auth::user()->verified
-                                ? 'background: linear-gradient(135deg, #A1FF8B 0%, #3F93FF 96.83%)'
-                                : 'background: linear-gradient(135deg, #BD344B 2.88%, #082440 100%)'
-                        }}" cursor-class="resend">
-                        {{ Auth::user()->verified ? 'Confirmed' : 'Not Confirmed' }}
-                    </a>
-                </div>
-            </div>
+<!-- USER CARD FEATURES -->
+<div class="_tedx_dashboard_card_features_wrapper">
+    <div class="_tedx_dashboard_card_feature" cursor-class="overlay">
+        <div class="_tedx_card_feature_title">
+            <i class="fas fa-desktop"></i>
+            <h2>Virtual Art Exhibition</h2>
         </div>
-        <!-- END STATUS USER -->
-
-        <!-- USER CARD FEATURES -->
-        <div class="_tedx_dashboard_card_features_wrapper">
-            <div class="_tedx_dashboard_card_feature" cursor-class="overlay">
-                <div class="_tedx_card_feature_title">
-                    <i class="fas fa-desktop"></i>
-                    <h2>Virtual Art Exhibition</h2>
-                </div>
-                <div class="_tedx_card_feature_caption">
-                    <p>Kunjungi pameran karya terbaik dari Loka Hasta Karya dengan pengalaman virtual.</p>
-                </div>
-                <div class="_tedx_link_alt">
-                    <a href="" cursor-class="link">Kunjungi Pameran</a>
-                </div>
-            </div>
-            <div class="_tedx_dashboard_card_feature" cursor-class="overlay">
-                <div class="_tedx_card_feature_title">
-                    <i class="fas fa-ticket-alt"></i>
-                    <h2>Pembelian Tiket</h2>
-                </div>
-                <div class="_tedx_card_feature_caption">
-                    <p>Lihat invoice, status pembelian, dan history dari pembelian tiket di akun kamu.</p>
-                </div>
-                <div class="_tedx_link_alt">
-                    <a href="" cursor-class="link">Lihat Tiket</a>
-                </div>
-            </div>
-            <div class="_tedx_dashboard_card_feature" cursor-class="overlay">
-                <div class="_tedx_card_feature_title">
-                    <i class="fas fa-video"></i>
-                    <h2>Livestream Channel</h2>
-                </div>
-                <div class="_tedx_card_feature_caption">
-                    <p>Kunjungi pameran karya terbaik dari Loka Hasta Karya dengan pengalaman virtual.</p>
-                </div>
-                <div class="_tedx_link_alt">
-                    <a href="" cursor-class="link">Masuk Livestream</a>
-                </div>
-            </div>
-            <div class="_tedx_dashboard_card_feature" cursor-class="overlay">
-                <div class="_tedx_card_feature_title">
-                    <i class="fas fa-calendar-alt"></i>
-                    <h2>Jadwal Kegiatan</h2>
-                </div>
-                <div class="_tedx_card_feature_caption">
-                    <p>Urutan kegiatan pelaksanaan puncak acara pada sesi livestream TEDxUniversitasBrawijaya2021.</p>
-                </div>
-                <div class="_tedx_link_alt">
-                    <a href="" cursor-class="link">Unduh Jadwal</a>
-                </div>
-            </div>
-            <div class="_tedx_dashboard_card_feature" cursor-class="overlay">
-                <div class="_tedx_card_feature_title">
-                    <i class="fas fa-sync"></i>
-                    <h2>Permintaan Token</h2>
-                </div>
-                <div class="_tedx_card_feature_caption">
-                    <p>Membuat permintaan untuk refresh token yang telah terpakai sesuai dengan syarat dan kondisi.</p>
-                </div>
-                <div class="_tedx_link_alt">
-                    <a href="" cursor-class="link">Buat Permintaan</a>
-                </div>
-            </div>
-            <div class="_tedx_dashboard_card_feature" cursor-class="overlay">
-                <div class="_tedx_card_feature_title">
-                    <i class="fas fa-user"></i>
-                    <h2>Kelola Akun</h2>
-                </div>
-                <div class="_tedx_card_feature_caption">
-                    <p>Lihat detail akun dan status akun kamu serta ubah password jika diperlukan.</p>
-                </div>
-                <div class="_tedx_link_alt">
-                    <a href="" cursor-class="link">Kelola Akun</a>
-                </div>
-            </div>
+        <div class="_tedx_card_feature_caption">
+            <p>Kunjungi pameran karya terbaik dari Loka Hasta Karya dengan pengalaman virtual.</p>
         </div>
-        <!-- END USER CARD FEATURES -->
+        <div class="_tedx_link_alt">
+            <a href="" cursor-class="link">Kunjungi Pameran</a>
+        </div>
+    </div>
+    <div class="_tedx_dashboard_card_feature" cursor-class="overlay">
+        <div class="_tedx_card_feature_title">
+            <i class="fas fa-ticket-alt"></i>
+            <h2>Pembelian Tiket</h2>
+        </div>
+        <div class="_tedx_card_feature_caption">
+            <p>Lihat invoice, status pembelian, dan history dari pembelian tiket di akun kamu.</p>
+        </div>
+        <div class="_tedx_link_alt">
+            <a href="{{ url('member/pembelian-ticket') }}" cursor-class="link">Lihat Tiket</a>
+        </div>
+    </div>
+    <div class="_tedx_dashboard_card_feature" cursor-class="overlay">
+        <div class="_tedx_card_feature_title">
+            <i class="fas fa-video"></i>
+            <h2>Livestream Channel</h2>
+        </div>
+        <div class="_tedx_card_feature_caption">
+            <p>Kunjungi pameran karya terbaik dari Loka Hasta Karya dengan pengalaman virtual.</p>
+        </div>
+        <div class="_tedx_link_alt">
+            <a href="" cursor-class="link">Masuk Livestream</a>
+        </div>
+    </div>
+    <div class="_tedx_dashboard_card_feature" cursor-class="overlay">
+        <div class="_tedx_card_feature_title">
+            <i class="fas fa-calendar-alt"></i>
+            <h2>Jadwal Kegiatan</h2>
+        </div>
+        <div class="_tedx_card_feature_caption">
+            <p>Urutan kegiatan pelaksanaan puncak acara pada sesi livestream TEDxUniversitasBrawijaya2021.</p>
+        </div>
+        <div class="_tedx_link_alt">
+            <a href="" cursor-class="link">Unduh Jadwal</a>
+        </div>
+    </div>
+    <div class="_tedx_dashboard_card_feature" cursor-class="overlay">
+        <div class="_tedx_card_feature_title">
+            <i class="fas fa-sync"></i>
+            <h2>Permintaan Token</h2>
+        </div>
+        <div class="_tedx_card_feature_caption">
+            <p>Membuat permintaan untuk refresh token yang telah terpakai sesuai dengan syarat dan kondisi.</p>
+        </div>
+        <div class="_tedx_link_alt">
+            <a href="" cursor-class="link">Buat Permintaan</a>
+        </div>
+    </div>
+    <div class="_tedx_dashboard_card_feature" cursor-class="overlay">
+        <div class="_tedx_card_feature_title">
+            <i class="fas fa-user"></i>
+            <h2>Kelola Akun</h2>
+        </div>
+        <div class="_tedx_card_feature_caption">
+            <p>Lihat detail akun dan status akun kamu serta ubah password jika diperlukan.</p>
+        </div>
+        <div class="_tedx_link_alt">
+            <a href="{{ url('/member/kelola-akun') }}" cursor-class="link">Kelola Akun</a>
+        </div>
     </div>
 </div>
+<!-- END USER CARD FEATURES -->
 @endsection
 
 @push('scripts')
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-    var Tawk_API = Tawk_API || {},
-        Tawk_LoadStart = new Date();
-    (function() {
-        var s1 = document.createElement("script"),
-            s0 = document.getElementsByTagName("script")[0];
-        s1.async = true;
-        s1.src = 'https://embed.tawk.to/609035a1b1d5182476b532e1/1f4pl30i8';
-        s1.charset = 'UTF-8';
-        s1.setAttribute('crossorigin', '*');
-        s0.parentNode.insertBefore(s1, s0);
-    })();
-</script>
-<!--End of Tawk.to Script-->
-@if (session('warning'))
-<script>
+@if (session('info'))
+  <script>
     Toast.fire({
-        icon: 'warning',
-        title: @json(session('warning'))
+      icon: 'info',
+      title: @json(session('info'))
     })
-</script>
+  </script>
 @endif
 @endpush

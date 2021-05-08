@@ -17,6 +17,9 @@
 @import "pages/dashboard";
 @import "pages/token";
 
+@import "pages/pembelianTicket";
+@import "pages/kelolaAkun";
+
 // Sections
 @import "sections/videoTeaser";
 @import "sections/speakerList";
@@ -82,3 +85,4 @@ body {
     @include lg { padding-top: 150px; }
     margin: 150px 0;
 }
+
