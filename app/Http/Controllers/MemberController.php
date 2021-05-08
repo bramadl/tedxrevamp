@@ -8,6 +8,7 @@ use App\User;
 use App\UserTicket;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class MemberController extends Controller
 {
@@ -28,7 +29,7 @@ class MemberController extends Controller
         $password = $validated['password'];
 
         if ($password) {
-            $user->password = $validated['password'];
+            $user->password = Hash::make($validated['password']);
         }
 
         $user->first_name = $validated['first_name'];

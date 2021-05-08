@@ -84,6 +84,14 @@
 @endsection
 
 @push('scripts')
+@if (session('success'))
+  <script>
+    Toast.fire({
+      icon: 'success',
+      title: @json(session('success'))
+    })
+  </script>
+@endif
 @if (session('info'))
   <script>
     Toast.fire({
