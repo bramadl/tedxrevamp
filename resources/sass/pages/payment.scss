@@ -1,0 +1,170 @@
+._tedx_payment_title {
+    margin: 2rem 0;
+    text-align: left;
+    line-height: 1.5rem;
+    span {
+        color: $red;    
+    }
+    
+    h1:last-child {
+        font-weight: bold;
+
+        @include md {
+            font-size: 2rem;
+        }
+    }
+}
+._tedx_payment_form_wrapper {
+    @include md { margin: 5vh 0; }
+    @include lg { margin: 10vh 0; }
+    @include xl { margin: 20vh 0; }
+    width: 100%;
+    box-sizing: border-box;
+    ._tedx_payment_form_content {    
+        @include md {
+            display: grid;
+            grid-template-areas: 
+                                "firstName lastName"
+                                "email phoneNumber"
+                                'ticketType ticketPrice'
+                                "payment proofPayment"
+                                "address address";
+            grid-gap: 2rem;
+            grid-template-columns: 1fr 1fr;
+        }
+        
+        ._tedx_payment_form_group {
+            // border: 1px solid green;
+            margin-bottom: 2rem;
+            @include md {
+                margin-bottom: 1rem;
+            }
+    
+            label {
+                position: relative;
+                display: inline;
+
+                @include lg {
+                    font-size: 1rem;
+                }
+    
+                &::after {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    transform: translate(1rem, 0);
+                    width: 100%;
+                    height: 50%;
+                    background: $red-50;
+                    z-index: -1;
+                }
+            }
+    
+            input,
+            select,
+            textarea,
+            option {
+                width: 100%;
+                background: none;
+                border: none;
+                border-bottom: 1px solid $white;
+                padding: 1rem 0;
+                color: $white;
+                font-family: 'Open Sans', sans-serif;
+            }
+
+            .input-file {
+                color: transparent;
+              }
+              .input-file::-webkit-file-upload-button {
+                visibility: hidden;
+              }
+              .input-file::before {
+                content: 'Choosen file';
+                color: $white;
+                display: inline-block;
+                background: none;
+                border: 1px solid $white;
+                border-radius: 3px;
+                padding: 5px 8px;
+                outline: none;
+                white-space: nowrap;
+                -webkit-user-select: none;
+                cursor: pointer;
+                font-weight: 700;
+                font-size: 10pt;
+              }
+              .input-file:hover::before {
+                border-color: black;
+              }
+              .input-file:active {
+                outline: 0;
+              }
+              .input-file:active::before {
+                background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9); 
+              }
+        }
+        ._tedx_payment_form_group.firstName {
+            grid-area: firstName;
+        }
+    
+        ._tedx_payment_form_group.lastName {
+            grid-area: lastName;
+        }
+    
+        ._tedx_payment_form_group.email {
+            grid-area: email;
+        }
+    
+        ._tedx_payment_form_group.phoneNumber {
+            grid-area: phoneNumber;
+        }
+    
+        ._tedx_payment_form_group.address {
+            grid-area: address;
+        }
+    
+        ._tedx_payment_form_group.ticketType {
+            grid-area: ticketType;
+        }
+    
+        ._tedx_payment_form_group.ticketPrice {
+            grid-area: ticketPrice;
+        }
+    
+        ._tedx_payment_form_group.payment {
+            grid-area: payment;
+        }
+    
+        ._tedx_payment_form_group.proofPayment {
+            grid-area: proofPayment;
+
+            input {
+                border: none;
+            }
+        }
+    }
+
+    button {
+        background: none;
+        color: $white;
+        border: none;
+        position: relative;
+        grid-area: button;
+        text-align: left;
+        display: inline;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translate(1rem, 0);
+            width: 100%;
+            height: 50%;
+            background: $red-50;
+            z-index: -1;
+        }
+    }
+}

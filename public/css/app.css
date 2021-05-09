@@ -542,7 +542,7 @@ textarea {
 @media only screen and (min-width: 996px) {
   ._tedx_hero_wrapper {
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
     padding: 0;
   }
 }
@@ -1881,16 +1881,16 @@ textarea {
   grid-area: kodeTiket;
 }
 
-._tedx_form_request_token_wrapper ._tedx_request_form_group {
+._tedx_form_request_token_wrapper ._tedx_form_request_token_content ._tedx_request_form_group {
   margin-bottom: 1.5rem;
 }
 
-._tedx_form_request_token_wrapper ._tedx_request_form_group label {
+._tedx_form_request_token_wrapper ._tedx_form_request_token_content ._tedx_request_form_group label {
   display: inline;
   position: relative;
 }
 
-._tedx_form_request_token_wrapper ._tedx_request_form_group label::after {
+._tedx_form_request_token_wrapper ._tedx_form_request_token_content ._tedx_request_form_group label::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -1902,8 +1902,8 @@ textarea {
   z-index: -1;
 }
 
-._tedx_form_request_token_wrapper ._tedx_request_form_group input,
-._tedx_form_request_token_wrapper ._tedx_request_form_group textarea {
+._tedx_form_request_token_wrapper ._tedx_form_request_token_content ._tedx_request_form_group input,
+._tedx_form_request_token_wrapper ._tedx_form_request_token_content ._tedx_request_form_group textarea {
   width: 100%;
   background: none;
   outline: none;
@@ -1921,6 +1921,202 @@ textarea {
 }
 
 ._tedx_form_request_token_wrapper ._tedx_request_form_button a::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(1rem, 0);
+  width: 100%;
+  height: 50%;
+  background: rgba(184, 43, 43, 0.5);
+  z-index: -1;
+}
+
+._tedx_payment_title {
+  margin: 2rem 0;
+  text-align: left;
+  line-height: 1.5rem;
+}
+
+._tedx_payment_title span {
+  color: #B82B2B;
+}
+
+._tedx_payment_title h1:last-child {
+  font-weight: bold;
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_payment_title h1:last-child {
+    font-size: 2rem;
+  }
+}
+
+._tedx_payment_form_wrapper {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_payment_form_wrapper {
+    margin: 5vh 0;
+  }
+}
+
+@media only screen and (min-width: 996px) {
+  ._tedx_payment_form_wrapper {
+    margin: 10vh 0;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  ._tedx_payment_form_wrapper {
+    margin: 20vh 0;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_payment_form_wrapper ._tedx_payment_form_content {
+    display: grid;
+    grid-template-areas: "firstName lastName" "email phoneNumber" "ticketType ticketPrice" "payment proofPayment" "address address";
+    grid-gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+._tedx_payment_form_wrapper ._tedx_payment_form_content ._tedx_payment_form_group {
+  margin-bottom: 2rem;
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_payment_form_wrapper ._tedx_payment_form_content ._tedx_payment_form_group {
+    margin-bottom: 1rem;
+  }
+}
+
+._tedx_payment_form_wrapper ._tedx_payment_form_content ._tedx_payment_form_group label {
+  position: relative;
+  display: inline;
+}
+
+@media only screen and (min-width: 996px) {
+  ._tedx_payment_form_wrapper ._tedx_payment_form_content ._tedx_payment_form_group label {
+    font-size: 1rem;
+  }
+}
+
+._tedx_payment_form_wrapper ._tedx_payment_form_content ._tedx_payment_form_group label::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(1rem, 0);
+  width: 100%;
+  height: 50%;
+  background: rgba(184, 43, 43, 0.5);
+  z-index: -1;
+}
+
+._tedx_payment_form_wrapper ._tedx_payment_form_content ._tedx_payment_form_group input,
+._tedx_payment_form_wrapper ._tedx_payment_form_content ._tedx_payment_form_group select,
+._tedx_payment_form_wrapper ._tedx_payment_form_content ._tedx_payment_form_group textarea,
+._tedx_payment_form_wrapper ._tedx_payment_form_content ._tedx_payment_form_group option {
+  width: 100%;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #FFFFFF;
+  padding: 1rem 0;
+  color: #FFFFFF;
+  font-family: "Open Sans", sans-serif;
+}
+
+._tedx_payment_form_wrapper ._tedx_payment_form_content ._tedx_payment_form_group .input-file {
+  color: transparent;
+}
+
+._tedx_payment_form_wrapper ._tedx_payment_form_content ._tedx_payment_form_group .input-file::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+._tedx_payment_form_wrapper ._tedx_payment_form_content ._tedx_payment_form_group .input-file::before {
+  content: "Choosen file";
+  color: #FFFFFF;
+  display: inline-block;
+  background: none;
+  border: 1px solid #FFFFFF;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 10pt;
+}
+
+._tedx_payment_form_wrapper ._tedx_payment_form_content ._tedx_payment_form_group .input-file:hover::before {
+  border-color: black;
+}
+
+._tedx_payment_form_wrapper ._tedx_payment_form_content ._tedx_payment_form_group .input-file:active {
+  outline: 0;
+}
+
+._tedx_payment_form_wrapper ._tedx_payment_form_content ._tedx_payment_form_group .input-file:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+
+._tedx_payment_form_wrapper ._tedx_payment_form_content ._tedx_payment_form_group.firstName {
+  grid-area: firstName;
+}
+
+._tedx_payment_form_wrapper ._tedx_payment_form_content ._tedx_payment_form_group.lastName {
+  grid-area: lastName;
+}
+
+._tedx_payment_form_wrapper ._tedx_payment_form_content ._tedx_payment_form_group.email {
+  grid-area: email;
+}
+
+._tedx_payment_form_wrapper ._tedx_payment_form_content ._tedx_payment_form_group.phoneNumber {
+  grid-area: phoneNumber;
+}
+
+._tedx_payment_form_wrapper ._tedx_payment_form_content ._tedx_payment_form_group.address {
+  grid-area: address;
+}
+
+._tedx_payment_form_wrapper ._tedx_payment_form_content ._tedx_payment_form_group.ticketType {
+  grid-area: ticketType;
+}
+
+._tedx_payment_form_wrapper ._tedx_payment_form_content ._tedx_payment_form_group.ticketPrice {
+  grid-area: ticketPrice;
+}
+
+._tedx_payment_form_wrapper ._tedx_payment_form_content ._tedx_payment_form_group.payment {
+  grid-area: payment;
+}
+
+._tedx_payment_form_wrapper ._tedx_payment_form_content ._tedx_payment_form_group.proofPayment {
+  grid-area: proofPayment;
+}
+
+._tedx_payment_form_wrapper ._tedx_payment_form_content ._tedx_payment_form_group.proofPayment input {
+  border: none;
+}
+
+._tedx_payment_form_wrapper button {
+  background: none;
+  color: #FFFFFF;
+  border: none;
+  position: relative;
+  grid-area: button;
+  text-align: left;
+  display: inline;
+}
+
+._tedx_payment_form_wrapper button::after {
   content: "";
   position: absolute;
   top: 50%;

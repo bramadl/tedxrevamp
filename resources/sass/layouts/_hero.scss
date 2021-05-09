@@ -9,7 +9,7 @@
   @include md { padding: 150px 0; }
   @include lg {
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
     padding: 0;
   }
 }
