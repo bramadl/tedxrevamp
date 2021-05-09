@@ -1,85 +1,104 @@
-@extends('layouts.master')
+@extends('layouts.member')
 
-@section('hero')
-<div style="flex: 1;"></div>
-<section class="_tedx_section _tedx_section_about dashboard">
-    <div style="display: inline-block;">
-        <div class="_tedx_section_title_overlay dashboard">
-            <div class="_tedx_section_title_wrapper">
-                <div class="_tedx_section_title dashboard">
-                    <h2 data-scroll data-scroll-direction="horizontal" data-scroll-speed="2">Dashboard</h2>
-                </div>
-            </div>
-        </div>
-        <div class="_tedx_section_about_cta _tedx_section_dashboard_cta">
-            <div>
-                <p class="_tedx_link">Hello,!</p>
-            </div>
-            <div>
-                <form action="{{ url('/member/logout') }}" method="POST">
-                    @csrf
-                    <button type="submit" class="_tedx_link" cursor-class="overlay">Logout Account</button>
-                </form>
-            </div>
-        </div>
-</section>
-<div style="flex: 1;"></div>
+@section('link')
+<a href="{{ url('member/dashboard') }}" cursor-class="hover">Kembali Ke Beranda</a>
 @endsection
 
 @section('content')
-<div data-scroll-section>
-    <div class="_tedx_dashboard_content_container">
-        <!-- STATUS USER -->
-        <div class="_tedx_dashboard_status_wrapper">
-            <div class="_tedx_dashboard_status_caption">
-                <h2><span>TEDx</span>UniversitasBrawijaya2021</h2>
-                <p>Manifestasi Peradaban</p>
-            </div>
-            <div class="_tedx_dashboard_status_button">
-                <div class="_tedx_dashboard_status_audiens">
-                    <p>Audiences</p>
-                </div>
-            </div>
+<form action="{{ url('member/permintaan-token') }}" method="POST">
+    @csrf
+    <div class="_tedx_wrapper_form">
+        <div class="_tedx_form_group">
+            <label for="first_name" class="_tedx_link">
+                <p>Nama Depan</p>
+            </label>
+            <input id="first_name" type="text" name="first_name" value="{{ Auth::user()->first_name }}" readonly>
         </div>
-        <!-- END STATUS USER -->
-
-        <!-- User Form Request -->
-        <div class="_tedx_form_request_token_wrapper">
-            <div class="_tedx_form_request_token_content">
-                <div class="_tedx_request_form_group firstname">
-                    <label for="firstName">Nama Depan</label>
-                    <input type="text" id="firstName">
-                </div>
-                <div class="_tedx_request_form_group lastname">
-                    <label for="lastName">Nama Belakang</label>
-                    <input type="text" id="lastName">
-                </div>
-                <div class="_tedx_request_form_group email">
-                    <label for="email">Alamat Email</label>
-                    <input type="email" id="email">
-                </div>
-                <div class="_tedx_request_form_group phone">
-                    <label for="phoneNumber">Nomor Telepon</label>
-                    <input type="number" id="phoneNumber">
-                </div>
-                <div class="_tedx_request_form_group token">
-                    <label for="token">Token Tiket</label>
-                    <input type="token" id="token">
-                </div>
-                <div class="_tedx_request_form_group tiket">
-                    <label for="tiket">Kode Tiket</label>
-                    <input type="tiket" id="tiket">
-                </div>
-            </div>
-            <div class="_tedx_request_form_group reason">
-                <label for="reason">Alasan</label>
-                <textarea name="" id="reason" cols="30" rows="10"></textarea>
-            </div>
-            <div class="_tedx_request_form_button">
-                <a href="">Kirim Permintaan</a>
-            </div>
+        <div class="_tedx_form_group">
+            <label for="last_name" class="_tedx_link">
+                <p>Nama Belakang</p>
+            </label>
+            <input id="last_name" type="text" name="last_name" value="{{ Auth::user()->last_name }}" readonly>
         </div>
-        <!-- User Form Request  -->
+        <div class="_tedx_form_group">
+            <label for="email_address" class="_tedx_link">
+                <p>Alamat Email</p>
+            </label>
+            <input id="email_address" type="email" name="email_address" value="{{ Auth::user()->email_address }}" readonly>
+        </div>
+        <div class="_tedx_form_group">
+            <label for="phone_number" class="_tedx_link">
+                <p>Nomor Telepon</p>
+            </label>
+            <input id="phone_number" type="number" name="phone_number" value="{{ Auth::user()->phone_number }}" readonly>
+        </div>
+        <div class="_tedx_form_group">
+            <label for="token" class="_tedx_link">
+                <p>Token Tiket</p>
+            </label>
+            <input id="token" type="text" name="token">
+            @error('token')
+            <span class="text-error-alt">{{ $message }}</span>
+            @enderror
+        </div>
+        <div class="_tedx_form_group">
+            <label for="code" class="_tedx_link">
+                <p>Kode Tiket</p>
+            </label>
+            <input id="code" type="text" name="code">
+            @error('code')
+            <span class="text-error-alt">{{ $message }}</span>
+            @enderror
+        </div>
+        <div class="_tedx_form_group">
+            <label for="reason" class="_tedx_link">
+                <p>Berikan kami alasan atau penjelasan mengapa perlu refresh token</p>
+            </label>
+            <textarea id="reason" name="reason" cols="30" rows="10"></textarea>
+            @error('reason')
+            <span class="text-error-alt">{{ $message }}</span>
+            @enderror
+        </div>
     </div>
-</div>
+    <div class="_tedx_submit_button">
+        <div class="_tedx_link">
+            <button>Buat Permintaan</button>
+        </div>
+    </div>
+</form>
 @endsection
+
+@push('scripts')
+@if(session('error'))
+<script>
+    Toast.fire({
+        icon: 'error',
+        title: @json(session('error'))
+    })
+</script>
+@endif
+@if(session('warning'))
+<script>
+    Toast.fire({
+        icon: 'warning',
+        title: @json(session('warning'))
+    })
+</script>
+@endif
+@if(session('info'))
+<script>
+    Toast.fire({
+        icon: 'info',
+        title: @json(session('info'))
+    })
+</script>
+@endif
+@if(session('success'))
+<script>
+    Toast.fire({
+        icon: 'success',
+        title: @json(session('success'))
+    })
+</script>
+@endif
+@endpush

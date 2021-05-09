@@ -64,7 +64,7 @@
             <p>Membuat permintaan untuk refresh token yang telah terpakai sesuai dengan syarat dan kondisi.</p>
         </div>
         <div class="_tedx_link_alt">
-            <a href="" cursor-class="link">Buat Permintaan</a>
+            <a href="{{ url('/member/permintaan-token') }}" cursor-class="link">Buat Permintaan</a>
         </div>
     </div>
     <div class="_tedx_dashboard_card_feature" cursor-class="overlay">

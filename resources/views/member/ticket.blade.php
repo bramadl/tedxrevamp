@@ -21,11 +21,11 @@
           </div>
           <div class="_tedx_tickets_info_user_detail">
             <p>Token Tiket</p>
-            <p>{{ $ticketUser->payment->payment_status === 'pending' ? '-' : $ticketUser->token }}</p>
+            <p>{{ $ticketUser->payment->payment_status === 'pending' ? 'Belum Tersedia' : $ticketUser->token }}</p>
           </div>
           <div class="_tedx_tickets_info_user_detail">
             <p>Kode Tiket</p>
-            <p>{{ $ticketUser->payment->payment_status === 'pending' ? '-' : $ticketUser->code }}</p>
+            <p>{{ $ticketUser->payment->payment_status === 'pending' ? 'Belum Tersedia' : $ticketUser->code }}</p>
           </div>
           <div class="_tedx_tickets_info_user_detail">
             <p>Nomor Telepon</p>
@@ -38,9 +38,18 @@
         </div>
       </div>
       <div class="_tedx_tickets_info_link">
+        @if($ticketUser->payment->payment_status !== 'pending')
         <div class="_tedx_link">
           <a href="{{ url('') }}" cursor-class="hover">Unduh Invoice Pembelian</a>
         </div>
+        <div class="_tedx_link">
+          <a href="{{ url('member/permintaan-token') }}" cursor-class="hover">Refresh Token</a>
+        </div>
+        @else
+        <div class="_tedx_link" style="color: #ffffff !important;">
+          <p cursor-class="hover" style="color: #ffffff !important;">Status Pembelian: {{ $ticketUser->payment->payment_status }}</p>
+        </div>
+        @endif
       </div>
     </div>
     <div class="_tedx_tickets_preview">
@@ -58,10 +67,10 @@
             </div>
           </div>
           <div class="_tedx_ticket_token">
-            <span>{{ strtoupper($ticketUser->code) }}</span>
+            <span>{{ $ticketUser->payment->payment_status === 'pending' ? 'AXXX XXXX XXXX XXXA' : $ticketUser->token }}</span>
           </div>
         </div>
-        <svg class="_tedx_ticker_right" viewBox="0 0 386 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg class="_tedx_ticket_right" viewBox="0 0 386 400" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path opacity="0.75" d="M0.206634 399.609L110.914 199.915L0.0834961 0H162.246L191.995 53.6622L221.745 0H371.999C375.772 0 385.464 0 385.464 0L273.076 199.915L385.311 399.609C385.311 399.609 375.732 399.609 371.999 399.609H221.622L191.995 346.168L162.369 399.609H0.206634Z" fill="#B82B2B" />
           <line x1="1" y1="-1" x2="198.851" y2="-1" transform="matrix(0.48773 0.872994 -0.873401 0.487002 14 24.9756)" stroke="white" stroke-width="2" stroke-linecap="round" />
           <line x1="1" y1="-1" x2="88.9328" y2="-1" transform="matrix(-0.48773 0.872994 0.873401 0.487002 371.473 24.9756)" stroke="white" stroke-width="2" stroke-linecap="round" />
@@ -81,3 +90,14 @@
   @endif
 </section>
 @endsection
+
+@push('scripts')
+@if (session('info'))
+  <script>
+    Toast.fire({
+      icon: 'info',
+      title: @json(session('info'))
+    })
+  </script>
+@endif
+@endpush

@@ -33,100 +33,6 @@
         }
     }
 
-    ._tedx_ticket {
-        background: linear-gradient(to left bottom, #1a1a1a, #111111);
-        max-width: 100%;
-        height: auto;
-        @include md { 
-            width: 100%;
-            height: 320px;
-         }
-        @include lg {
-            width: 576px;
-            height: 360px;
-        }
-        @include xl {
-            width: 780px;
-        }
-        border-left: 0.25rem solid $red;
-        display: flex;
-        justify-content: space-between;
-
-        &_left {
-            flex: 1;
-            padding: 1rem;
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
-            flex-direction: column;
-
-            ._tedx_ticket_logo {
-                line-height: 0;
-
-                img {
-                    width: 75px;
-                    @include sm { width: 125px }
-                    @include md { width: 150px; }
-                }
-            }
-
-            ._tedx_ticket_title {
-                h2 {
-                    text-transform: uppercase;
-                    font-size: .75rem;
-                    @include md { font-size: 1.5rem; }
-                    font-family: "Open Sans", sans-serif;
-                    font-weight: 800;
-                }
-
-                div {
-                    display: flex;
-                    align-items: center;
-                    justify-content: flex-start;
-                    margin-top: 1rem;
-
-                    span {
-                        color: $white-50;
-                        font-size: .5rem;
-                        @include md { font-size: 1rem; }
-                        font-weight: 300;
-                        font-family: "Open Sans", sans-serif;
-
-                        &.dot {
-                            display: inline-block;
-                            width: 0.25rem;
-                            height: 0.25rem;
-                            border-radius: 50%;
-                            background: $white-50;
-                            margin: 0 0.5rem;
-                        }
-                    }
-                }
-            }
-
-            ._tedx_ticket_token {
-                color: $white;
-                font-size: .5rem;
-                @include md { font-size: 1rem; }
-                font-weight: 300;
-                font-family: "Open Sans", sans-serif;
-            }
-        }
-
-        &_right {
-            width: 250px;
-            height: auto;
-            @include md { width: 360px; }
-            @include lg { width: 420px; }
-
-            svg {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-        }
-    }
-
     ._tedx_ticket_detail {
         order: 1;
         flex: 1;
@@ -160,8 +66,8 @@
             p {
                 color: $white-50;
                 font-family: "Open Sans", sans-serif;
-                font-size: .8rem;
-                @include lg { font-size: 1rem; }
+                font-size: .75rem;
+                @include lg { font-size: .8rem; }
                 font-weight: 300;
                 line-height: 1.5;
 

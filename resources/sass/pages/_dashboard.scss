@@ -5,7 +5,7 @@
     }
 
     ._tedx_section_title_overlay ._tedx_section_title.dashboard h2 {
-        font-size: 3.4rem;
+        font-size: 2.4rem;
         @include md {
             font-size: 6rem;
         }
@@ -22,6 +22,8 @@
         align-items: center;
         margin-top: 1rem;
         @include md { margin-top: 2rem; }
+        font-size: .8rem;
+        @include md { font-size: 1rem; }
         
         button {
             appearance: none;
@@ -61,7 +63,7 @@
         h2 {
             margin-bottom: .25rem;
             font-weight: bold;
-            font-size: 1.25rem;
+            font-size: 1rem;
             @include md {
                 font-size: 1.5rem;
                 margin-bottom: 0.85rem;
@@ -81,14 +83,24 @@
             font-size: .85rem;
             font-weight: 300;
             display: inline-flex;
-            align-items: center;
-
+            flex-direction: column;
+            align-items: flex-start;
+            @include md {
+                align-items: center;
+                flex-direction: row;
+            }
+            font-size: 0.8rem;
+            @include md {
+                font-size: 1rem;
+            }
             @include lg {
                 font-size: 1.2rem;
             }
 
             .line {
-                border: 1px solid white;
+                display: none;
+                @include md{ display: block; }
+                border: 1px solid $white;
                 border-radius: 1px;
                 width: 100px;
                 margin: 0 1rem;
@@ -97,23 +109,22 @@
                 &::before {
                     content: "";
                     position: absolute;
-                    background-color: $white;
                     top: 50%;
                     left: 0;
-                    transform: translate(-50%, -50%);
-                }
-    
-                &::before {
+                    background-color: $white;
                     width: .25rem;
                     height: .25rem;
                     border-radius: 50%;
+                    transform: translate(-50%, -50%);
                 }
             }
 
             a {
                 color: $white-50;
-                font-size: 0.9rem;
+                font-size: 0.8rem;
                 transition: .4s $cubiz-bezier;
+                margin-top: 0.25rem;
+                @include lg { margin: 0; }
 
                 &:hover {
                     color: $white;

@@ -1,38 +1,9 @@
-._tedx_kelola_akun_wrapper {
+._tedx_wrapper_form {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 2rem 100px;
-
-  ._tedx_kelola_akun_form_group {
-    label {
-      margin-bottom: 1rem;
-    }
-
-    input {
-      appearance: none;
-      display: block;
-      width: 100%;
-      padding: .75rem 1rem;
-      outline: none;
-      border: none;
-      border-bottom: 1px solid $white-50;
-      background: none;
-      color: $white;
-      font-family: 'Open Sans', sans-serif;
-      font-size: 1rem;
-    }
-
-    &.not-filled {
-      border-bottom: 1px solid $red;
-
-      input::placeholder {
-        color: $red;
-      }
-    }
-  }
-
-}
-
-._tedx_kelola_akun_submit_button {
-  margin-top: 50px;
+  grid-template-columns: repeat(1, 1fr);
+  @include lg { grid-template-columns: repeat(2, 1fr); }
+  grid-gap: 2rem 25px;
+  @include md { grid-gap: 2rem 50px; }
+  @include lg { grid-gap: 2rem 75px; }
+  @include xl { grid-gap: 2rem 100px; }
 }

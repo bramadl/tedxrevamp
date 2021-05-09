@@ -8,8 +8,8 @@
 <form action="{{ url('member/kelola-akun') }}" method="POST">
     @csrf
     @method('PUT')
-    <div class="_tedx_kelola_akun_wrapper">
-        <div class="_tedx_kelola_akun_form_group">
+    <div class="_tedx_wrapper_form">
+        <div class="_tedx_form_group">
             <label for="first_name" class="_tedx_link">
                 <p>Nama Depan</p>
             </label>
@@ -18,7 +18,7 @@
                 <span class="text-error-alt">{{ $message }}</span>
             @enderror
         </div>
-        <div class="_tedx_kelola_akun_form_group">
+        <div class="_tedx_form_group">
             <label for="last_name" class="_tedx_link">
                 <p>Nama Belakang</p>
             </label>
@@ -27,7 +27,7 @@
                 <span class="text-error-alt">{{ $message }}</span>
             @enderror
         </div>
-        <div class="_tedx_kelola_akun_form_group">
+        <div class="_tedx_form_group">
             <label for="email_address" class="_tedx_link">
                 <p>Alamat Email</p>
             </label>
@@ -36,7 +36,7 @@
                 <span class="text-error-alt">{{ $message }}</span>
             @enderror
         </div>
-        <div class="_tedx_kelola_akun_form_group">
+        <div class="_tedx_form_group">
             <label for="password" class="_tedx_link">
                 <p>Password</p>
             </label>
@@ -45,7 +45,7 @@
                 <span class="text-error-alt">{{ $message }}</span>
             @enderror
         </div>
-        <div class="_tedx_kelola_akun_form_group">
+        <div class="_tedx_form_group">
             <label for="phone_number" class="_tedx_link">
                 <p>Nomor Handphone</p>
             </label>
@@ -54,7 +54,7 @@
                 <span class="text-error-alt">{{ $message }}</span>
             @enderror
         </div>
-        <div class="_tedx_kelola_akun_form_group @if(session('warning')) not-filled @endif">
+        <div class="_tedx_form_group @if(session('warning')) not-filled @endif">
             <label for="street_address" class="_tedx_link">
                 <p>Alamat Rumah</p>
             </label>
@@ -64,7 +64,7 @@
             @enderror
         </div>
     </div>
-    <div class="_tedx_kelola_akun_submit_button">
+    <div class="_tedx_submit_button">
         <div class="_tedx_link">
             <button>Simpan Perubahan</button>
         </div>

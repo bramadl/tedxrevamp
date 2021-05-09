@@ -1,5 +1,7 @@
 <?php
 
+use App\RefreshToken;
+use App\UserTicket;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -50,5 +52,7 @@ Route::group(['prefix' => '/member'], function () {
     Route::get('/pembelian-ticket', 'MemberController@ticket')->name('ticket');
     Route::get('/kelola-akun', 'MemberController@profile')->name('profile');
     Route::put('/kelola-akun', 'MemberController@updateProfile');
+    Route::get('/permintaan-token', 'MemberController@token')->name('token');
+    Route::post('/permintaan-token', 'MemberController@refreshToken');
   });
 });

@@ -34,14 +34,20 @@ class TicketController extends Controller
     
     public function getCurrentTicketByDate($date)
     {
-        $presaleOneStartDate = date('Y-m-d', strtotime('2021-05-11'));
+        $presaleOneStartDate = date('Y-m-d', strtotime('2021-05-09'));
         $presaleOneEndDate = date('Y-m-d', strtotime('2021-05-17'));
         $presaleTwoStartDate = date('Y-m-d', strtotime('2021-05-18'));
         $presaleTwoEndDate = date('Y-m-d', strtotime('2021-05-24'));
 
-        if (($date >= $presaleOneStartDate) && ($date <= $presaleOneEndDate)) {
+        if (
+            (date('Y-m-d', strtotime($date . " +1 day")) >= $presaleOneStartDate) &&
+            (date('Y-m-d', strtotime($date . " +1 day")) <= $presaleOneEndDate)
+        ) {
             return 'presale-1';
-        } else if (($date >= $presaleTwoStartDate) && ($date <= $presaleTwoEndDate)) {
+        } else if (
+            (date('Y-m-d', strtotime($date . " +1 day")) >= $presaleTwoStartDate) &&
+            (date('Y-m-d', strtotime($date . " +1 day")) <= $presaleTwoEndDate)
+        ) {
             return 'presale-2';
         } else {
             return null;
@@ -50,15 +56,13 @@ class TicketController extends Controller
     
     public function payment(Request $request)
     {
-        if (!Auth::check()) {
-            redirect('/');
-        }
+        if (!Auth::check()) { redirect('/'); }
 
         $userId = Auth::id();
         $userHasPayment = Payment::find($userId);
         if ($userHasPayment) {
             return redirect()
-                    ->route('member.dashboard')
+                    ->route('member.ticket')
                 ->with('info', 'Kamu sudah melakukan pembelian tiket.');
         }
 

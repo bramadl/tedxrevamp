@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\RefreshTokenRequest;
 use App\Http\Requests\UpdateProfileRequest;
 use App\Payment;
+use App\RefreshToken;
 use App\User;
 use App\UserTicket;
 use Illuminate\Http\Request;
@@ -42,6 +44,46 @@ class MemberController extends Controller
         return redirect()
                 ->route('member.profile')
                 ->with('success', 'Akun berhasil diperbaharui!');
+    }
+
+    public function token()
+    {
+        return view('member.token');
+    }
+
+    public function refreshToken(RefreshTokenRequest $request)
+    {
+        $validated = $request->validated();
+        $userTicket = UserTicket::with('payment')
+                        ->whereHas('payment', function ($query) {
+                            $query->where('user_id', Auth::id());
+                        })
+                        ->first();
+
+        if (
+            $userTicket->token !== $validated['token'] &&
+            $userTicket !== $validated['code']
+        ) {
+            return redirect()
+                    ->back()
+                    ->with('error', 'Token dan Kode tiket tidak ditemukan.');
+        }
+
+        $refreshToken = RefreshToken::where('payment_id', $userTicket->payment->id)->first();
+        if ($refreshToken) {
+            return redirect()
+                    ->back()
+                    ->with('warning', 'Kamu telah membuat permintaan token. Silahkan menunggu.');
+        }
+        
+        RefreshToken::create([
+            'payment_id' => $userTicket->payment->id,
+            'reason' => $validated['reason']
+        ]);
+
+        return redirect()
+                ->route('member.ticket')
+                ->with('info', 'Permintaan berhasil diproses. Silahkan menunggu.');
     }
 
     public function ticket()
