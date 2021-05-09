@@ -30,7 +30,7 @@
 </head>
 
 <body class="custom-cursor">
-    <div class="_tedx" data-scroll-container>
+    <div id="tedx" class="_tedx" data-scroll-container>
         @include('layouts.partials.menu')
         <div class="_tedx_header_wrapper" data-scroll-section>
             <div class="_tedx_hero_wrapper">
@@ -42,8 +42,11 @@
         @include('layouts.partials.footer')
     </div>
     @yield('video')
-    <div id="cursor"><div class="cursor__circle"></div></div>
+    <div id="cursor">
+        <div class="cursor__circle"></div>
+    </div>
 
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js' integrity='sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==' crossorigin='anonymous'></script>
     <!-- GSAP JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js" integrity="sha512-cdV6j5t5o24hkSciVrb8Ki6FveC2SgwGfLE31+ZQRHAeSRxYhAQskLkq3dLm8ZcWe1N3vBOEYmmbhzf7NTtFFQ==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/plugins/CSSPlugin.min.js"></script>

@@ -59,6 +59,12 @@ class MemberController extends Controller
                             $query->where('user_id', Auth::id());
                         })
                         ->first();
+        
+        if (!$userTicket) {
+            return redirect()
+                    ->back()
+                    ->with('info', 'Kamu belum melakukan pembelian tiket.');
+        }
 
         if (
             $userTicket->token !== $validated['token'] &&
@@ -88,12 +94,10 @@ class MemberController extends Controller
 
     public function ticket()
     {
-        $ticketUser = UserTicket::with('payment')
-                        ->whereHas('payment', function ($query) {
-                            $query->where('user_id', Auth::id());
-                        })
+        $ticketUser = Payment::with(['userTicket', 'user', 'ticket'])
+                        ->where('user_id', Auth::id())
                         ->first();
-
+                        
         return view('member.ticket', [
             'ticketUser' => $ticketUser
         ]);

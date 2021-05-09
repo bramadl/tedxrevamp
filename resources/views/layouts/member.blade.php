@@ -75,13 +75,15 @@
           <div class="_tedx_dashboard_status_button">
             <div class="_tedx_dashboard_status_audiens">
               <p>{{ Auth::user()->role === 'user' ? 'Audience' : Auth::user()->role }}</p>
-              <a href="{{ url('member/resend/confirm') }}" target="_blank" style="{{
-                            Auth::user()->verified
-                                ? 'background: linear-gradient(135deg, #A1FF8B 0%, #3F93FF 96.83%)'
-                                : 'background: linear-gradient(135deg, #BD344B 2.88%, #082440 100%)'
-                        }}" cursor-class="resend">
-                {{ Auth::user()->verified ? 'Confirmed' : 'Not Confirmed' }}
+              @if (!Auth::user()->verified)
+              <a href="{{ url('member/resend/confirm') }}" target="_blank" style="background: linear-gradient(135deg, #BD344B 2.88%, #082440 100%)" cursor-class="resend">
+                Tidak Aktif
               </a>
+              @else
+              <span style="background: linear-gradient(135deg, #A1FF8B 0%, #3F93FF 96.83%)">
+                Aktif
+              </span>
+              @endif
             </div>
           </div>
         </div>

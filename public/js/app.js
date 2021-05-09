@@ -19387,7 +19387,9 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // Requir
 
 
 
-__webpack_require__(/*! ./plugins/custom-cursor */ "./resources/js/plugins/custom-cursor.js"); // Home Page
+__webpack_require__(/*! ./plugins/custom-cursor */ "./resources/js/plugins/custom-cursor.js");
+
+__webpack_require__(/*! ./plugins/preloader */ "./resources/js/plugins/preloader.js"); // Home Page
 
 
 __webpack_require__(/*! ./modules/menu */ "./resources/js/modules/menu.js");
@@ -20318,6 +20320,17 @@ setTimeout(function () {
   scroller.update();
 }, 1000);
 /* harmony default export */ __webpack_exports__["default"] = (scroller);
+
+/***/ }),
+
+/***/ "./resources/js/plugins/preloader.js":
+/*!*******************************************!*\
+  !*** ./resources/js/plugins/preloader.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
 
 /***/ }),
 

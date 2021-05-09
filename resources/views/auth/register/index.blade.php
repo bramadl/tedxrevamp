@@ -19,7 +19,7 @@
             </div>
             <form action="{{ url('/member/register') }}" method="POST" class="_tedx_register_form_wrapper">
                 @csrf
-                <div class="_tedx_form_group">
+                <div class="_tedx_auth_form_group">
                     <div>
                         <input type="text" name="first_name" value="{{ old('first_name') }}" placeholder="Nama Depan" class="firstName">
                         @error('first_name')
@@ -33,25 +33,25 @@
                         @enderror
                     </div>
                 </div>
-                <div class="_tedx_form">
+                <div class="_tedx_auth_form">
                     <input type="email" name="email_address" value="{{ old('email_address') }}" placeholder="Alamat Email">
                     @error('email_address')
                         <span class="text-error">{{$message}}</span>
                     @enderror
                 </div>
-                <div class="_tedx_form">
+                <div class="_tedx_auth_form">
                     <input type="number" name="phone_number" value="{{ old('phone_number') }}" placeholder="Nomor Telepon">
                     @error('phone_number')
                         <span class="text-error">{{$message}}</span>
                     @enderror
                 </div>
-                <div class="_tedx_form">
+                <div class="_tedx_auth_form">
                     <input type="password" name="password" value="{{ old('password') }}" placeholder="Kata Sandi">
                     @error('password')
                         <span class="text-error">{{$message}}</span>
                     @enderror
                 </div>
-                <div class="_tedx_submit_button">
+                <div class="_tedx_auth_submit_button">
                     <button type="submit">Sign Up</button>
                 </div>
             </form>
