@@ -4,4 +4,8 @@ const scroller = new LocomotiveScroll({
   smooth: true
 })
 
+setTimeout(() => {
+  scroller.update()
+}, 1000)
+
 export default scroller

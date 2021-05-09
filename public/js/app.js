@@ -20261,8 +20261,8 @@ function getAngle(diffX, diffY) {
 
 function getSqueeze(diffX, diffY) {
   var distance = Math.sqrt(Math.pow(diffX, 2) + Math.pow(diffY, 2));
-  var maxSqueeze = 0.15;
-  var accelerator = 1500;
+  var maxSqueeze = 0.25;
+  var accelerator = 2000;
   return Math.min(distance / accelerator, maxSqueeze);
 }
 
@@ -20314,6 +20314,9 @@ var scroller = new LocomotiveScroll({
   el: document.querySelector('[data-scroll-container]'),
   smooth: true
 });
+setTimeout(function () {
+  scroller.update();
+}, 1000);
 /* harmony default export */ __webpack_exports__["default"] = (scroller);
 
 /***/ }),

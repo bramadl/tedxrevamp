@@ -1,0 +1,100 @@
+._tedx_ticket {
+    background: linear-gradient(to left bottom, #1a1a1a, #111111);
+    width: 100%;
+    height: auto;
+    border-left: 0.25rem solid $red;
+    display: flex;
+    justify-content: space-between;
+
+    &_left {
+      flex: 1;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-direction: column;
+        padding: 1rem;
+
+        ._tedx_ticket_logo {
+            line-height: 0;
+
+            img {
+                width: 75px;
+                @include md {
+                    width: 100px;
+                }
+                @include lg {
+                    width: 125px;
+                }
+            }
+        }
+
+        ._tedx_ticket_title {
+            h2 {
+                text-align: left;
+                text-transform: uppercase;
+                font-size: 0.75rem;
+                @include md {
+                    font-size: 1rem;
+                }
+                @include lg {
+                    font-size: 1.25rem;
+                }
+                @include xl {
+                    font-size: 1.5rem;
+                }
+                font-family: "Open Sans", sans-serif;
+                font-weight: 800;
+            }
+
+            div {
+                display: flex;
+                flex-direction: column;
+                @include md { flex-direction: row; }
+                justify-content: flex-start;
+                margin-top: 0.8rem;
+                @include md {
+                  align-items: center;
+                    margin-top: 1rem;
+                }
+                text-align: left;
+
+                span {
+                    color: $white-50;
+                    font-size: 0.5rem;
+                    @include md {
+                        font-size: 1rem;
+                    }
+                    font-weight: 300;
+                    font-family: "Open Sans", sans-serif;
+
+                    &.dot {
+                      display: none;
+                        @include md { display: inline-block; }
+                        width: 0.25rem;
+                        height: 0.25rem;
+                        border-radius: 50%;
+                        background: $white-50;
+                        margin: 0 0.5rem;
+                    }
+                }
+            }
+        }
+
+        ._tedx_ticket_token {
+            color: $white;
+            font-size: 0.5rem;
+            @include md {
+                font-size: 1rem;
+            }
+            font-weight: 300;
+            font-family: "Open Sans", sans-serif;
+        }
+    }
+
+    &_right {
+        height: 150px;
+        @include sm { height: 200px ;}
+        @include md { height: 300px ;}
+        @include lg { height: 250px ;}
+    }
+}

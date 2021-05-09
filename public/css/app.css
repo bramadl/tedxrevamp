@@ -1416,15 +1416,6 @@ textarea {
   box-sizing: border-box;
 }
 
-._tedx_register_content ._tedx_register_form_wrapper .text-error {
-  margin-top: -0.5rem;
-  display: block;
-  text-align: left;
-  font-size: 0.75rem;
-  font-style: italic;
-  color: #B82B2B;
-}
-
 ._tedx_register_content ._tedx_register_form_wrapper ._tedx_form_group {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -1475,12 +1466,29 @@ textarea {
   background: #a32626;
 }
 
+.text-error,
+.text-error-alt {
+  display: block;
+  text-align: left;
+  font-size: 0.75rem;
+  font-style: italic;
+  color: #B82B2B;
+}
+
+.text-error {
+  margin-top: -0.5rem;
+}
+
+.text-error-alt {
+  margin-top: 0.5rem;
+}
+
 ._tedx_section ._tedx_section_title_overlay.dashboard {
   padding: 25px 0 35px;
 }
 
 ._tedx_section ._tedx_section_title_overlay ._tedx_section_title.dashboard h2 {
-  font-size: 3.4rem;
+  font-size: 2.4rem;
 }
 
 @media only screen and (min-width: 768px) {
@@ -1505,11 +1513,18 @@ textarea {
   flex-direction: row !important;
   align-items: center;
   margin-top: 1rem;
+  font-size: 0.8rem;
 }
 
 @media only screen and (min-width: 768px) {
   ._tedx_section ._tedx_section_dashboard_cta {
     margin-top: 2rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_section ._tedx_section_dashboard_cta {
+    font-size: 1rem;
   }
 }
 
@@ -1563,12 +1578,13 @@ textarea {
 ._tedx_dashboard_status_wrapper ._tedx_dashboard_status_caption h2 {
   margin-bottom: 0.25rem;
   font-weight: bold;
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 
 @media only screen and (min-width: 768px) {
   ._tedx_dashboard_status_wrapper ._tedx_dashboard_status_caption h2 {
     font-size: 1.5rem;
+    margin-bottom: 0.85rem;
   }
 }
 
@@ -1587,7 +1603,23 @@ textarea {
   color: #FFFFFF;
   font-size: 0.85rem;
   font-weight: 300;
-  display: inline-block;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 0.8rem;
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_dashboard_status_wrapper ._tedx_dashboard_status_caption p {
+    align-items: center;
+    flex-direction: row;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_dashboard_status_wrapper ._tedx_dashboard_status_caption p {
+    font-size: 1rem;
+  }
 }
 
 @media only screen and (min-width: 996px) {
@@ -1596,25 +1628,48 @@ textarea {
   }
 }
 
-._tedx_dashboard_status_wrapper ._tedx_dashboard_status_caption p::after,
-._tedx_dashboard_status_wrapper ._tedx_dashboard_status_caption p::before {
+._tedx_dashboard_status_wrapper ._tedx_dashboard_status_caption p .line {
+  display: none;
+  border: 1px solid #FFFFFF;
+  border-radius: 1px;
+  width: 100px;
+  margin: 0 1rem;
+  position: relative;
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_dashboard_status_wrapper ._tedx_dashboard_status_caption p .line {
+    display: block;
+  }
+}
+
+._tedx_dashboard_status_wrapper ._tedx_dashboard_status_caption p .line::before {
   content: "";
   position: absolute;
-  background-color: #FFFFFF;
   top: 50%;
-  left: 100%;
-  transform: translate(1rem, -50%);
-}
-
-._tedx_dashboard_status_wrapper ._tedx_dashboard_status_caption p::after {
-  width: 100px;
-  height: 1px;
-}
-
-._tedx_dashboard_status_wrapper ._tedx_dashboard_status_caption p::before {
+  left: 0;
+  background-color: #FFFFFF;
   width: 0.25rem;
   height: 0.25rem;
   border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+._tedx_dashboard_status_wrapper ._tedx_dashboard_status_caption p a {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.8rem;
+  transition: 0.4s cubic-bezier(0.39, 0.575, 0.565, 1);
+  margin-top: 0.25rem;
+}
+
+@media only screen and (min-width: 996px) {
+  ._tedx_dashboard_status_wrapper ._tedx_dashboard_status_caption p a {
+    margin: 0;
+  }
+}
+
+._tedx_dashboard_status_wrapper ._tedx_dashboard_status_caption p a:hover {
+  color: #FFFFFF;
 }
 
 ._tedx_dashboard_status_wrapper ._tedx_dashboard_status_button {
@@ -1750,6 +1805,311 @@ textarea {
   font-size: 1rem;
   font-weight: 400;
   text-decoration: none;
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_form_request_token_wrapper ._tedx_form_request_token_content {
+    display: grid;
+    grid-template-areas: "firstName lastName" "emailAddress phoneNumber" "tokenTiket kodeTiket";
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+  }
+}
+
+@media only screen and (min-width: 996px) {
+  ._tedx_form_request_token_wrapper ._tedx_form_request_token_content {
+    grid-gap: 3rem;
+  }
+}
+
+._tedx_form_request_token_wrapper ._tedx_form_request_token_content ._tedx_request_form_group.firstname {
+  grid-area: firstName;
+}
+
+._tedx_form_request_token_wrapper ._tedx_form_request_token_content ._tedx_request_form_group.lastname {
+  grid-area: lastName;
+}
+
+._tedx_form_request_token_wrapper ._tedx_form_request_token_content ._tedx_request_form_group.email {
+  grid-area: emailAddress;
+}
+
+._tedx_form_request_token_wrapper ._tedx_form_request_token_content ._tedx_request_form_group.phone {
+  grid-area: phoneNumber;
+}
+
+._tedx_form_request_token_wrapper ._tedx_form_request_token_content ._tedx_request_form_group.token {
+  grid-area: tokenTiket;
+}
+
+._tedx_form_request_token_wrapper ._tedx_form_request_token_content ._tedx_request_form_group.tiket {
+  grid-area: kodeTiket;
+}
+
+._tedx_form_request_token_wrapper ._tedx_request_form_group {
+  margin-bottom: 1.5rem;
+}
+
+._tedx_form_request_token_wrapper ._tedx_request_form_group label {
+  display: inline;
+  position: relative;
+}
+
+._tedx_form_request_token_wrapper ._tedx_request_form_group label::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(1rem, 0);
+  width: 100%;
+  height: 50%;
+  background: rgba(184, 43, 43, 0.5);
+  z-index: -1;
+}
+
+._tedx_form_request_token_wrapper ._tedx_request_form_group input,
+._tedx_form_request_token_wrapper ._tedx_request_form_group textarea {
+  width: 100%;
+  background: none;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 1rem;
+  color: #FFFFFF;
+  font-family: "Open Sans", sans-serif;
+}
+
+._tedx_form_request_token_wrapper ._tedx_request_form_button a {
+  position: relative;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+._tedx_form_request_token_wrapper ._tedx_request_form_button a::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(1rem, 0);
+  width: 100%;
+  height: 50%;
+  background: rgba(184, 43, 43, 0.5);
+  z-index: -1;
+}
+
+._tedx_tickets_info_wrapper {
+  font-family: "Open Sans", sans-serif;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 25px;
+}
+
+@media only screen and (min-width: 996px) {
+  ._tedx_tickets_info_wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_tickets_info_wrapper {
+    grid-gap: 50px;
+  }
+}
+
+@media only screen and (min-width: 996px) {
+  ._tedx_tickets_info_wrapper {
+    grid-gap: 75px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  ._tedx_tickets_info_wrapper {
+    grid-gap: 100px;
+  }
+}
+
+._tedx_tickets_info_wrapper.empty_state {
+  display: block;
+  text-align: left;
+}
+
+._tedx_tickets_info_wrapper.empty_state p {
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+@media only screen and (min-width: 996px) {
+  ._tedx_tickets_info_wrapper ._tedx_tickets_user_user {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+._tedx_tickets_info_wrapper ._tedx_tickets_info_user {
+  text-align: left;
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_tickets_info_wrapper ._tedx_tickets_info_user {
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width: 996px) {
+  ._tedx_tickets_info_wrapper ._tedx_tickets_info_user {
+    text-align: left;
+  }
+}
+
+._tedx_tickets_info_wrapper ._tedx_tickets_info_user ._tedx_tickets_info_user_content {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2rem 4rem;
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_tickets_info_wrapper ._tedx_tickets_info_user ._tedx_tickets_info_user_content {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+._tedx_tickets_info_wrapper ._tedx_tickets_info_user ._tedx_tickets_info_user_content ._tedx_tickets_info_user_detail {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+._tedx_tickets_info_wrapper ._tedx_tickets_info_user ._tedx_tickets_info_user_content ._tedx_tickets_info_user_detail p {
+  display: inline-block;
+  text-align: left;
+  font-size: 0.75rem;
+  position: relative;
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_tickets_info_wrapper ._tedx_tickets_info_user ._tedx_tickets_info_user_content ._tedx_tickets_info_user_detail p {
+    font-size: 1rem;
+  }
+}
+
+._tedx_tickets_info_wrapper ._tedx_tickets_info_user ._tedx_tickets_info_user_content ._tedx_tickets_info_user_detail p:first-child {
+  font-size: 1rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+._tedx_tickets_info_wrapper ._tedx_tickets_info_user ._tedx_tickets_info_user_content ._tedx_tickets_info_user_detail p:first-child::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(1rem, 0);
+  width: 100%;
+  height: 50%;
+  background: rgba(184, 43, 43, 0.5);
+  z-index: -1;
+}
+
+._tedx_tickets_info_wrapper ._tedx_tickets_info_user ._tedx_tickets_info_user_content ._tedx_tickets_info_user_detail p:last-child {
+  width: 100%;
+  display: block;
+  margin-top: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #9e9e9e;
+}
+
+@media only screen and (min-width: 996px) {
+  ._tedx_tickets_info_wrapper ._tedx_tickets_info_user ._tedx_tickets_info_user_content ._tedx_tickets_info_user_detail p:last-child {
+    margin-top: 0.5rem;
+  }
+}
+
+._tedx_tickets_info_wrapper ._tedx_tickets_info_link {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media only screen and (min-width: 996px) {
+  ._tedx_tickets_info_wrapper ._tedx_tickets_info_link {
+    margin-top: 0;
+  }
+}
+
+@media only screen and (min-width: 996px) {
+  ._tedx_tickets_info_wrapper ._tedx_tickets_info_link {
+    text-align: left;
+  }
+}
+
+._tedx_tickets_info_wrapper ._tedx_tickets_info_link p {
+  font-size: 0.75rem;
+  position: relative;
+}
+
+._tedx_tickets_info_wrapper ._tedx_tickets_info_link p::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(1rem, 0);
+  width: 100%;
+  height: 50%;
+  background: rgba(184, 43, 43, 0.5);
+  z-index: -1;
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_tickets_info_wrapper ._tedx_tickets_info_link p {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (min-width: 996px) {
+  ._tedx_tickets_info_wrapper ._tedx_tickets_info_link p {
+    font-size: 1rem;
+  }
+}
+
+._tedx_tickets_info_wrapper ._tedx_tickets_preview {
+  margin-top: 50px;
+}
+
+@media only screen and (min-width: 996px) {
+  ._tedx_tickets_info_wrapper ._tedx_tickets_preview {
+    margin: 0;
+  }
+}
+
+._tedx_wrapper_form {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 2rem 25px;
+}
+
+@media only screen and (min-width: 996px) {
+  ._tedx_wrapper_form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_wrapper_form {
+    grid-gap: 2rem 50px;
+  }
+}
+
+@media only screen and (min-width: 996px) {
+  ._tedx_wrapper_form {
+    grid-gap: 2rem 75px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  ._tedx_wrapper_form {
+    grid-gap: 2rem 100px;
+  }
 }
 
 #videoTeaser {
@@ -2512,143 +2872,6 @@ textarea {
   }
 }
 
-#ticketPurchase ._tedx_ticket {
-  background: linear-gradient(to left bottom, #1a1a1a, #111111);
-  max-width: 100%;
-  height: auto;
-  border-left: 0.25rem solid #B82B2B;
-  display: flex;
-  justify-content: space-between;
-}
-
-@media only screen and (min-width: 768px) {
-  #ticketPurchase ._tedx_ticket {
-    width: 100%;
-    height: 320px;
-  }
-}
-
-@media only screen and (min-width: 996px) {
-  #ticketPurchase ._tedx_ticket {
-    width: 576px;
-    height: 360px;
-  }
-}
-
-@media only screen and (min-width: 1200px) {
-  #ticketPurchase ._tedx_ticket {
-    width: 780px;
-  }
-}
-
-#ticketPurchase ._tedx_ticket_left {
-  flex: 1;
-  padding: 1rem;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  flex-direction: column;
-}
-
-#ticketPurchase ._tedx_ticket_left ._tedx_ticket_logo {
-  line-height: 0;
-}
-
-#ticketPurchase ._tedx_ticket_left ._tedx_ticket_logo img {
-  width: 75px;
-}
-
-@media only screen and (min-width: 576px) {
-  #ticketPurchase ._tedx_ticket_left ._tedx_ticket_logo img {
-    width: 125px;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  #ticketPurchase ._tedx_ticket_left ._tedx_ticket_logo img {
-    width: 150px;
-  }
-}
-
-#ticketPurchase ._tedx_ticket_left ._tedx_ticket_title h2 {
-  text-transform: uppercase;
-  font-size: 0.75rem;
-  font-family: "Open Sans", sans-serif;
-  font-weight: 800;
-}
-
-@media only screen and (min-width: 768px) {
-  #ticketPurchase ._tedx_ticket_left ._tedx_ticket_title h2 {
-    font-size: 1.5rem;
-  }
-}
-
-#ticketPurchase ._tedx_ticket_left ._tedx_ticket_title div {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  margin-top: 1rem;
-}
-
-#ticketPurchase ._tedx_ticket_left ._tedx_ticket_title div span {
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 0.5rem;
-  font-weight: 300;
-  font-family: "Open Sans", sans-serif;
-}
-
-@media only screen and (min-width: 768px) {
-  #ticketPurchase ._tedx_ticket_left ._tedx_ticket_title div span {
-    font-size: 1rem;
-  }
-}
-
-#ticketPurchase ._tedx_ticket_left ._tedx_ticket_title div span.dot {
-  display: inline-block;
-  width: 0.25rem;
-  height: 0.25rem;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.5);
-  margin: 0 0.5rem;
-}
-
-#ticketPurchase ._tedx_ticket_left ._tedx_ticket_token {
-  color: #FFFFFF;
-  font-size: 0.5rem;
-  font-weight: 300;
-  font-family: "Open Sans", sans-serif;
-}
-
-@media only screen and (min-width: 768px) {
-  #ticketPurchase ._tedx_ticket_left ._tedx_ticket_token {
-    font-size: 1rem;
-  }
-}
-
-#ticketPurchase ._tedx_ticket_right {
-  width: 250px;
-  height: auto;
-}
-
-@media only screen and (min-width: 768px) {
-  #ticketPurchase ._tedx_ticket_right {
-    width: 360px;
-  }
-}
-
-@media only screen and (min-width: 996px) {
-  #ticketPurchase ._tedx_ticket_right {
-    width: 420px;
-  }
-}
-
-#ticketPurchase ._tedx_ticket_right svg {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
 #ticketPurchase ._tedx_ticket_detail {
   order: 1;
   flex: 1;
@@ -2694,14 +2917,14 @@ textarea {
 #ticketPurchase ._tedx_ticket_detail ._tedx_ticket_description p {
   color: rgba(255, 255, 255, 0.5);
   font-family: "Open Sans", sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 300;
   line-height: 1.5;
 }
 
 @media only screen and (min-width: 996px) {
   #ticketPurchase ._tedx_ticket_detail ._tedx_ticket_description p {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 }
 
@@ -3691,9 +3914,12 @@ textarea {
 }
 
 ._tedx_link:hover::after {
-  left: 0;
+  transform: translate(0, 0);
 }
 
+._tedx_link:hover span,
+._tedx_link:hover p,
+._tedx_link:hover button,
 ._tedx_link:hover a {
   color: #FFFFFF;
 }
@@ -3702,6 +3928,12 @@ textarea {
 ._tedx_link button,
 ._tedx_link p,
 ._tedx_link span {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: none;
+  outline: none;
+  border: none;
   color: rgba(255, 255, 255, 0.5);
   font-family: "Open Sans", sans-serif;
   font-size: 0.75rem;
@@ -4123,6 +4355,195 @@ textarea {
   font-weight: 300;
   font-family: "Open Sans", sans-serif;
   line-height: 2;
+}
+
+._tedx_ticket {
+  background: linear-gradient(to left bottom, #1a1a1a, #111111);
+  width: 100%;
+  height: auto;
+  border-left: 0.25rem solid #B82B2B;
+  display: flex;
+  justify-content: space-between;
+}
+
+._tedx_ticket_left {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+._tedx_ticket_left ._tedx_ticket_logo {
+  line-height: 0;
+}
+
+._tedx_ticket_left ._tedx_ticket_logo img {
+  width: 75px;
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_ticket_left ._tedx_ticket_logo img {
+    width: 100px;
+  }
+}
+
+@media only screen and (min-width: 996px) {
+  ._tedx_ticket_left ._tedx_ticket_logo img {
+    width: 125px;
+  }
+}
+
+._tedx_ticket_left ._tedx_ticket_title h2 {
+  text-align: left;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 800;
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_ticket_left ._tedx_ticket_title h2 {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (min-width: 996px) {
+  ._tedx_ticket_left ._tedx_ticket_title h2 {
+    font-size: 1.25rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  ._tedx_ticket_left ._tedx_ticket_title h2 {
+    font-size: 1.5rem;
+  }
+}
+
+._tedx_ticket_left ._tedx_ticket_title div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 0.8rem;
+  text-align: left;
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_ticket_left ._tedx_ticket_title div {
+    flex-direction: row;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_ticket_left ._tedx_ticket_title div {
+    align-items: center;
+    margin-top: 1rem;
+  }
+}
+
+._tedx_ticket_left ._tedx_ticket_title div span {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.5rem;
+  font-weight: 300;
+  font-family: "Open Sans", sans-serif;
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_ticket_left ._tedx_ticket_title div span {
+    font-size: 1rem;
+  }
+}
+
+._tedx_ticket_left ._tedx_ticket_title div span.dot {
+  display: none;
+  width: 0.25rem;
+  height: 0.25rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  margin: 0 0.5rem;
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_ticket_left ._tedx_ticket_title div span.dot {
+    display: inline-block;
+  }
+}
+
+._tedx_ticket_left ._tedx_ticket_token {
+  color: #FFFFFF;
+  font-size: 0.5rem;
+  font-weight: 300;
+  font-family: "Open Sans", sans-serif;
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_ticket_left ._tedx_ticket_token {
+    font-size: 1rem;
+  }
+}
+
+._tedx_ticket_right {
+  height: 150px;
+}
+
+@media only screen and (min-width: 576px) {
+  ._tedx_ticket_right {
+    height: 200px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_ticket_right {
+    height: 300px;
+  }
+}
+
+@media only screen and (min-width: 996px) {
+  ._tedx_ticket_right {
+    height: 250px;
+  }
+}
+
+._tedx_form_group label {
+  margin-bottom: 1rem;
+}
+
+._tedx_form_group input,
+._tedx_form_group textarea {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  background: none;
+  color: #FFFFFF;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+}
+
+._tedx_form_group.not-filled {
+  border-bottom: 1px solid #B82B2B;
+}
+
+._tedx_form_group.not-filled input::-moz-placeholder {
+  color: #B82B2B;
+}
+
+._tedx_form_group.not-filled input:-ms-input-placeholder {
+  color: #B82B2B;
+}
+
+._tedx_form_group.not-filled input::placeholder {
+  color: #B82B2B;
+}
+
+._tedx_submit_button {
+  margin-top: 50px;
 }
 
 body {

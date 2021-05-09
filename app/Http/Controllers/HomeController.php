@@ -23,11 +23,11 @@ class HomeController extends Controller
     {   
         $presale = [
             'presale-1' => $this->determineTicketAvailability(
-                date('Y-m-d', strtotime("11/05/2001")),
+                date('Y-m-d', strtotime("11/05/2021")),
                 date('Y-m-d', strtotime("17/05/2021"))
             ),
             'presale-2' => $this->determineTicketAvailability(
-                date('Y-m-d', strtotime("18/05/2001")),
+                date('Y-m-d', strtotime("18/05/2021")),
                 date('Y-m-d', strtotime("24/05/2021"))
             )
         ];

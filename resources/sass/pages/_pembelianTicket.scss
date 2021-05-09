@@ -1,0 +1,123 @@
+._tedx_tickets_info_wrapper {
+    font-family: "Open Sans", sans-serif;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    @include lg { grid-template-columns: repeat(2, 1fr); }
+    grid-gap: 25px;
+    @include md { grid-gap: 50px; }
+    @include lg { grid-gap: 75px; }
+    @include xl { grid-gap: 100px; }
+
+    &.empty_state {
+        display: block;
+        text-align: left;
+
+        p {
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+    }
+
+    ._tedx_tickets_user_user {
+        @include lg {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+    }
+    ._tedx_tickets_info_user {
+        text-align: left;
+        @include md {
+            text-align: center;
+        }
+        @include lg {
+            text-align: left;
+        }
+        ._tedx_tickets_info_user_content {
+            display: grid;
+            grid-template-columns: 1fr;
+            @include md { grid-template-columns: 1fr 1fr; }
+            grid-gap: 2rem 4rem;
+
+            ._tedx_tickets_info_user_detail {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+
+                p {
+                    display: inline-block;
+                    text-align: left;
+                    font-size: 0.75rem;
+                    position: relative;
+                    @include md {
+                        font-size: 1rem;
+                    }
+                }
+
+                p:first-child {
+                    font-size: 1rem;
+                    font-weight: 600;
+                    display: inline-block;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        top: 50%;
+                        transform: translate(1rem, 0);
+                        width: 100%;
+                        height: 50%;
+                        background: $red-50;
+                        z-index: -1;
+                    }
+                }
+
+                p:last-child {
+                    width: 100%;
+                    display: block;
+                    margin-top: 0.75rem;
+                    @include lg { margin-top: 0.5rem; }
+                    padding-bottom: 0.5rem;
+                    border-bottom: 1px solid rgb(158, 158, 158);
+                }
+            }
+        }
+    }
+
+    ._tedx_tickets_info_link {
+        margin-top: 50px;
+        @include lg { margin-top: 0; }
+        display: flex;
+        justify-content: space-between;
+        @include lg {
+            text-align: left;
+        }
+
+        p {
+            font-size: 0.75rem;
+            position: relative;
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translate(1rem, 0);
+                width: 100%;
+                height: 50%;
+                background: $red-50;
+                z-index: -1;
+            }
+            @include md {
+                font-size: 1rem;
+            }
+            @include lg {
+                font-size: 1rem;
+            }
+        }
+    }
+
+    ._tedx_tickets_preview {
+        margin-top: 50px;
+        @include lg { margin: 0; }
+    }
+}
