@@ -25,3 +25,23 @@ if (buyTicketLink) {
     scroller.scrollTo('#ticketPurchase')
   })
 }
+
+const goToLinks = document.querySelectorAll('a.go-to')
+if (goToLinks.length) {
+  goToLinks.forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      const hash = e.target.href.split('#')[e.target.href.split('#').length - 1]
+
+      sessionStorage.setItem('goto', hash)
+      location.href = '/about'
+    })
+  })
+}
+
+if (location.pathname === '/about') {
+  if (sessionStorage.getItem('goto')) {
+    scroller.scrollTo(`#${sessionStorage.getItem('goto')}`)
+    sessionStorage.clear()
+  }
+}
