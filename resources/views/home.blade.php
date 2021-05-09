@@ -90,7 +90,7 @@
         <h2 data-scroll data-scroll-direction="horizontal" data-scroll-speed="-2">Speakers</h2>
       </div>
       <div class="_tedx_section_text">
-        <h3>Tema: Manifestasi Peradaban</h3>
+        <h3>TENTANG TEDxUniversitasBrawijaya</h3>
         <p>Peradaban dimaknai sebagai pola kebudayaan yang terstruktur dalam menilai tingkatan suatu budaya di masyarakat. TEDxUniversitasBrawijaya 2021 menghadirkan para pembicara terbaik di bidangnya yang akan berbagi gagasan dan pengalaman denganmu untuk merayakan Manifestasi Peradaban.</p>
       </div>
     </div>
