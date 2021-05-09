@@ -20119,7 +20119,7 @@ var speakers = {
   abdul: {
     name: 'Abdul Hair',
     profession: 'Akademisi',
-    title: 'Untitled',
+    title: 'Hidup Negara Melalui Tontonan',
     description: "Nasionalisme dan kecintaan suatu rakyat terhadap bangsanya juga terikat dengan bagaimana sebuah mimpi diciptakan dan dimanifestasikan oleh bangsa tersebut. Konstruksi dari nilai-nilai yang dibentuk untuk merepresentasikan wujud dari bangsa tersebut juga merupakan kewajiban bagi pemerintah dan warganya  dalam membentuk suatu negara. Seperti contoh yang paling terkenal dari Amerika Serikat di mana mereka mengkonstruksi The American Dream melalui hollywood dan media lainnya. Membentuk perwujudan atas sifat dan mimpi dari Amerika. Lalu bagaimana dengan Indonesia? Dalam sejarah modern dan media kita, mimpi seperti apakah yang dikonstruksi untuk melambangkan Indonesia?\n    <br></br>\n    Pada talks kali ini, Abdul Hair akan mendiskusikan sebuah konstruksi nilai-nilai wujud kebudayaan  yang terjadi secara masif dan universal.\n    ",
     url: 'https://ik.imagekit.io/tedxub/abdul_9Ve4sVKfy.JPG'
   },
@@ -20131,7 +20131,7 @@ var speakers = {
     url: 'https://ik.imagekit.io/tedxub/mice_YRGNQESaK.jpg'
   },
   bondan: {
-    name: 'Bondan Sekari Adi',
+    name: 'Bondan Sekaring Adi',
     profession: 'Value Investor',
     title: 'Manifestasi Budaya dengan Kuliner ',
     description: "Berawal dari film, sebuah kuliner menjadi solusi atas keresahan yang Bondan alami selama ini. Bondan menghadirkan one sliced pizza yang disajikan dengan harga ekonomis karena melihat peluang dari kacamata yang berbeda serta stigma masyarakat mengenai pizza. Reaksi dan antusiasme dari masyarakat dapat meluaskan pasar yang ada sehingga ketakutan akan ketertinggalan tren menghilang.\n    <br></br>\n    Pada talk kali ini, Bondan akan membahas mengenai perjalanan yang ia lalui dalam menciptakan sebuah nilai yang terinspirasi dari budaya luar namun dapat diadaptasi dengan keadaan masyarakat lokal yang kemudian diterima dan tumbuh dengan baik.    \n    ",
