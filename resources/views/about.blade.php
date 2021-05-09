@@ -40,7 +40,7 @@
           <p>TED is a nonprofit devoted to spreading ideas, usually in the form of short, powerful talks (18 minutes or less). TED began in 1984 as a conference where Technology, Entertainment and Design converged, and today covers almost all topics — from science to business to global issues — in more than 100 languages. Meanwhile, independently run TEDx events help share ideas in communities around the world.</p>
         </div>
         <div class="_tedx_link">
-          <a href="#">Read More</a>
+          <a target="_blank" href="https://www.ted.com/">Read More</a>
         </div>
       </div>
     </div>
@@ -66,7 +66,7 @@
           <p>TEDx is a grassroots initiative, created in the spirit of TED’s overall mission to research and discover “ideas worth spreading.” TEDx brings the spirit of TED to local communities around the globe through TEDx events. These events are organized by passionate individuals who seek to uncover new ideas and to share the latest research in their local areas that spark conversations in their communities. TEDx events include live speakers and recorded TED Talks, and are organized independently under a free license granted by TED.</p>
         </div>
         <div class="_tedx_link">
-          <a href="#">Read More</a>
+          <a target="_blank" href="https://www.ted.com/tedx/events/42718">Read More</a>
         </div>
       </div>
     </div>

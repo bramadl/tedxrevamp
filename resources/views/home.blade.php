@@ -12,7 +12,7 @@
       </h1>
     </div>
     <div class="_tedx_subtitle">
-      <h2>Yang Dibicarakan Ketika Membicarakan Manusia</h2>
+      <h2>Telusuri lebih dalam tentang budaya <br> populer masa kini bersama kami!</h2>
     </div>
     <div class="_tedx_register_cta">
       <button cursor-class="hover">Beli Tiket</button>
@@ -177,7 +177,7 @@
       <div class="_tedx_speaker_avatar" data-target="bondan" cursor-class="speaker">
         <img src="https://ik.imagekit.io/tedxub/bondan_98mJccjBp.JPG">
         <div class="_tedx_speaker_info">
-          <h1>Bondan Sekari Adi</h1>
+          <h1>Bondan Sekaring Adi</h1>
           <p>Value Investor</p>
         </div>
       </div>

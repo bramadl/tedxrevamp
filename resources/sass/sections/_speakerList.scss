@@ -192,6 +192,7 @@
                 overflow: auto;
 
                 p {
+                    text-align: justify;
                     font-size: 0.75rem;
                     @include lg {
                         font-size: 0.8rem;

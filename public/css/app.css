@@ -2597,6 +2597,7 @@ textarea {
 }
 
 #speakerList ._tedx_speaker_wrapper ._tedx_speaker_detail_description p {
+  text-align: justify;
   font-size: 0.75rem;
   font-weight: 300;
   font-family: "Open Sans", sans-serif;

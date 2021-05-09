@@ -15,7 +15,7 @@ class CreateRefreshTokensTable extends Migration
     {
         Schema::create('refresh_tokens', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('payment_id')->constrained('payments', 'id')->onDelete('cascade');
+            $table->foreignId('user_ticket_id')->constrained('user_tickets', 'id')->onDelete('cascade');
             $table->text('reason');
             $table->timestamps();
         });
