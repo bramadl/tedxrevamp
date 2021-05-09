@@ -3,9 +3,12 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Mail\InvoiceNotificationMail;
 use App\Payment;
 use App\Ticket;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class PaymentController extends Controller
 {
@@ -29,6 +32,8 @@ class PaymentController extends Controller
         $ticket = Ticket::find($payment->ticket_id);
         $ticket->stock = $ticket->stock - 1;
         $ticket->save();
+        
+        Mail::to(Auth::user()->email_address)->send(new InvoiceNotificationMail(Auth::user(), $payment));
         
         return response()->json([
             'success' => true,

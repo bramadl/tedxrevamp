@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StorePaymentRequest;
+use App\Mail\PaymentNotificationMail;
 use App\Payment;
 use App\Ticket;
 use App\UserTicket;
+use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 
 class TicketController extends Controller
@@ -59,11 +62,11 @@ class TicketController extends Controller
         if (!Auth::check()) { redirect('/'); }
 
         $userId = Auth::id();
-        $userHasPayment = Payment::find($userId);
+        $userHasPayment = Payment::where('user_id', $userId)->first();
         if ($userHasPayment) {
             return redirect()
                     ->route('member.ticket')
-                ->with('info', 'Kamu sudah melakukan pembelian tiket.');
+                    ->with('info', 'Kamu sudah melakukan pembelian tiket.');
         }
 
         $ticketType = $this->getCurrentTicketByDate(date('Y-m-d'));
@@ -74,9 +77,16 @@ class TicketController extends Controller
         
         $user = Auth::user();
         $ticket = Ticket::where('type', $ticketType)->first();
+        if (!$ticket->stock) {
+            return redirect()
+                    ->route('member.dashboard')
+                    ->with('info', 'Mohon maaf tiket sudah habis terjual.');
+        }
 
         if (!$user->street_address) {
-            return redirect()->route('member.profile')->with('warning', 'Mohon isi alamat terlebih dahulu.');
+            return redirect()
+                    ->route('member.profile')
+                    ->with('warning', 'Mohon isi alamat terlebih dahulu.');
         }
 
         return view('ticket.payment', [
@@ -116,8 +126,47 @@ class TicketController extends Controller
             'code' => $code
         ]);
 
+        $detailPayment = Payment::where('id', $payment->id)->with('ticket')->first();
+        Mail::to(Auth::user()->email_address)->send(new PaymentNotificationMail(Auth::user(), $detailPayment));
+
+        return redirect()
+                ->route('invoice', [
+                    'payment_id' => explode('.', $payment->payment_proof)[0],
+                    'proof' => explode('.', $payment->payment_proof)[1]
+                ])
+                ->with('Invoice berhasil dikirim ke email kamu.');
+    }
+
+    public function invoice(Request $request)
+    {
+        $payment_id = $request->query('payment_id');
+        $payment_proof = $request->query('proof');
+
+        $id = $payment_id . '.' . $payment_proof;
+        $payment = Payment::where('payment_proof', $id)->with('userTicket')->first();
+        if (!$payment) {
+            return redirect('/');
+        }
+
         return view('ticket.invoice', [
-            'payment' => $payment
+            'payment' => $payment,
+            'payment_id' => $payment_id,
+            'payment_proof' => $payment_proof
         ]);
+    }
+
+    public function printInvoice(Request $request)
+    {
+        $payment_id = $request->query('payment_id');
+        $payment_proof = $request->query('proof');
+
+        $id = $payment_id . '.' . $payment_proof;
+        $payment = Payment::where('payment_proof', $id)->with('userTicket')->first();
+        if (!$payment) {
+            return redirect('/');
+        }
+
+        $pdf = PDF::loadview('ticket.invoice', [ 'payment' => $payment ]);
+        return $pdf->download('invoice-pembelian-ticket.pdf');
     }
 }

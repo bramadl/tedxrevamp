@@ -22,7 +22,7 @@ class TicketSeeder extends Seeder
             [
                 'type' => 'presale-2',
                 'stock' => 120,
-                'price' => 105000,
+                'price' => 100000,
                 'description' => 'Sudut pandang dari berbagai speakers akan ditungkan lebih jelas dalam TED Talks yang akan hadir. Tidak ketinggalan, terdapat Special Performance dan Virtual Exhibition yang menarik.'
             ]
         ]);

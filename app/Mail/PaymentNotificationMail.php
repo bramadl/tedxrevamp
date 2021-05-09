@@ -7,20 +7,22 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class VerifyMail extends Mailable
+class PaymentNotificationMail extends Mailable
 {
     use Queueable, SerializesModels;
 
     public $user;
+    public $payment;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($user)
+    public function __construct($user, $payment)
     {
         $this->user = $user;
+        $this->payment = $payment;
     }
 
     /**
@@ -31,7 +33,7 @@ class VerifyMail extends Mailable
     public function build()
     {
         $this->from($address = 'technical.tedxbrawijaya@gmail.com', $name = 'TEDxUniversitasBrawijaya2021')
-                ->subject('Verifikasi Akun TEDxUniversitasBrawijaya2021')
-                ->view('notification.verify-user');
+                ->subject('Pembelian Ticket TEDxUniversitasBrawijaya2021')
+                ->view('notification.payment-notification');
     }
 }

@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>TEDxUniversitasBrawijaya 2021 | Verify Email</title>
+  <title>TEDxUniversitasBrawijaya 2021 | Payment Notification</title>
 
   <!-- Favicons -->
   <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-chrome-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/favicon/android-chrome-512x512.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
@@ -143,20 +142,18 @@
   </header>
 
   <section>
-    <h2>Selamat datang di TEDxUniversitasBrawijaya 2021</h2>
+    <h2>Pembelian Tiket Livestreaming TEDxUniversitasBrawijaya 2021</h2>
     <div>
-      <p>Halo, {{ $user->first_name }} {{ $user->last_name }} !</p>
-      <p>Terimakasih sudah mendaftar menjadi bagian dari Manifestasi Peradaban pada kegiatan TEDxUniversitasBrawaijaya 2021 ini.</p>
-      <p>Silahkan verifikasi akun kamu dengan klik tombol di bawah ini.</p>
-      <a class="link" href="{{ url('member/verify', $user->verifyUser->token) }}">
-        Sign In Ke Akun Dan Verifikasi Email
+      <p>Terimakasih kasih telah melakukan pembelian tiket livestreaming TEDxUniversitasBrawijaya 2021.</p>
+      <p>Pembayaran kamu sedang dalam proses dan akan kami beritahu kembali melalui email <strong>{{ $user->email_address }}</strong> dalam waktu 1x24 jam.</p>
+      <a class="link" href="{{ url('ticket/invoice?payment_id=' . explode('.', $payment->payment_proof)[0] . '&proof=' . explode('.', $payment->payment_proof)[1]) }}">
+        Unduh Invoice Pembayaran
       </a>
-      <small>Jika tombol di atas tidak bekerja untuk berbagai alasan, kamu bisa salin link ini dan paste di browser kamu.</small>
-      <a href="{{ url('member/verify', $user->verifyUser->token) }}">{{ url('member/verify', $user->verifyUser->token) }}</a>
+      <small>Detail pembelian tiket dan status pembelian tiket dapat kamu lihat di <a href="{{ url('member/dashboard') }}">member area</a></small>
       <p class="note">Jika kamu mengalami kendala, silahkan hubungi kami di personal chat pada dashboard!</p>
     </div>
 
-    <h3>Detail Akun</h3>
+    <h3>Detail Pembelian</h3>
     <div class="detail">
       <table>
         <tr>
@@ -180,18 +177,43 @@
           <td>{{ $user->phone_number }}</td>
         </tr>
         <tr>
+          <td>Alamat Pembelian</td>
+          <td>:</td>
+          <td>{{ $user->street_address }}</td>
+        </tr>
+        <tr>
           <td>User Role</td>
           <td>:</td>
           <td>{{ $user->role === 'user' ? 'Audience' : $user->role }}</td>
+        </tr>
+        <tr>
+          <td>Tipe Tiket</td>
+          <td>:</td>
+          <td>{{ $payment->ticket->type }}</td>
+        </tr>
+        <tr>
+          <td>Harga Tiket</td>
+          <td>:</td>
+          <td>{{ $payment->ticket->price }}</td>
+        </tr>
+        <tr>
+          <td>Metode Pembayaran</td>
+          <td>:</td>
+          <td>{{ $payment->payment_method }}</td>
+        </tr>
+        <tr>
+          <td>Status Pembelian</td>
+          <td>:</td>
+          <td>{{ $payment->payment_status }}</td>
         </tr>
       </table>
     </div>
 
     <h3>Langkah Berikutnya</h3>
     <ul>
-      <li>Akses <a href="{{ url('member/dashboard') }}">member area</a> kamu untuk mendapatkan informasi terkait kegiatan TEDxUniversitasBrawijaya2021</li>
-      <li><a href="{{ url('member/profile') }}">Kelola akun</a> kamu dan perbaharui detail alamat untuk keperluan pembelian tiket.</li>
-      <li>Akun terverifikasi dapat melakukan pembelian tiket untuk kegiatan livestream, cek ketentuan</li>
+      <li>Untuk melihat detail pembelian tiket dan status pembelian tiket, kamu bisa akses <a href="{{ url('member/pembelian-ticket') }}">halaman pembelian tiket</a> di member area kamu.</li>
+      <li>Sistem akan melakukan verifikasi pada pembelian kamu dan merubah status pembelian ticket dalam waktu 1x24 jam.</li>
+      <li>Mohon tidak melanggar <a href="{{ asset('pdf/ketentuan-ticket.pdf') }}">Syarat dan Ketentuan</a> yang berlaku.</li>
     </ul>
   </section>
 

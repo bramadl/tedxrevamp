@@ -26,6 +26,7 @@ Route::view('/token', 'member.token');
 Route::group(['middleware' => ['verified']], function () {
   Route::get('/ticket/payment', 'TicketController@payment')->name('payment');
   Route::post('/ticket/payment', 'TicketController@storePayment');
+  Route::get('/ticket/invoice', 'TicketController@invoice')->name('invoice');
 });
 
 Route::group(['prefix' => '/member'], function () {

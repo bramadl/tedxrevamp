@@ -12,7 +12,7 @@ class UserTicket extends Model
      * @var array
      */
     protected $fillable = [
-        'user_ticket_id',
+        'payment_id',
         'token',
         'code',
         'refresh_token'

@@ -12,7 +12,7 @@ class RefreshToken extends Model
      * @var array
      */
     protected $fillable = [
-        'payment_id',
+        'user_ticket_id',
         'reason'
     ];
 }
