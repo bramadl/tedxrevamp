@@ -19,13 +19,13 @@
             </div>
             <form action="{{ url('/member/login') }}" method="POST" class="_tedx_register_form_wrapper">
                 @csrf
-                <div class="_tedx_form">
+                <div class="_tedx_auth_form">
                     <input type="email" name="email_address" placeholder="Alamat Email">
                 </div>
-                <div class="_tedx_form">
+                <div class="_tedx_auth_form">
                     <input type="password" name="password" placeholder="Kata Sandi">
                 </div>
-                <div class="_tedx_submit_button">
+                <div class="_tedx_auth_submit_button">
                     <button type="submit">Sign In</button>
                 </div>
             </form>

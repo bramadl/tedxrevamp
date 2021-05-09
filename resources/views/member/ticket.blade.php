@@ -13,32 +13,32 @@
         <div class="_tedx_tickets_info_user_content">
           <div class="_tedx_tickets_info_user_detail">
             <p>Nama Pembeli</p>
-            <p>{{ $ticketUser->payment->user->first_name }} {{ $ticketUser->payment->user->last_name }}</p>
+            <p>{{ $ticketUser->user->first_name }} {{ $ticketUser->user->last_name }}</p>
           </div>
           <div class="_tedx_tickets_info_user_detail">
             <p>Email Pembeli</p>
-            <p>{{ $ticketUser->payment->user->email_address }}</p>
+            <p>{{ $ticketUser->user->email_address }}</p>
           </div>
           <div class="_tedx_tickets_info_user_detail">
             <p>Token Tiket</p>
-            <p>{{ $ticketUser->payment->payment_status === 'pending' ? 'Belum Tersedia' : $ticketUser->token }}</p>
+            <p>{{ $ticketUser->payment_status !== 'confirmed' ? 'Belum Tersedia' : $ticketUser->userTicket->token }}</p>
           </div>
           <div class="_tedx_tickets_info_user_detail">
             <p>Kode Tiket</p>
-            <p>{{ $ticketUser->payment->payment_status === 'pending' ? 'Belum Tersedia' : $ticketUser->code }}</p>
+            <p>{{ $ticketUser->payment_status !== 'confirmed' ? 'Belum Tersedia' : $ticketUser->userTicket->code }}</p>
           </div>
           <div class="_tedx_tickets_info_user_detail">
             <p>Nomor Telepon</p>
-            <p>{{ $ticketUser->payment->user->phone_number }}</p>
+            <p>{{ $ticketUser->user->phone_number }}</p>
           </div>
           <div class="_tedx_tickets_info_user_detail">
             <p>Token Refresh</p>
-            <p>{{ $ticketUser->refresh_token }}</p>
+            <p>{{ $ticketUser->userTicket->refresh_token }}</p>
           </div>
         </div>
       </div>
       <div class="_tedx_tickets_info_link">
-        @if($ticketUser->payment->payment_status !== 'pending')
+        @if($ticketUser->payment_status === 'confirmed')
         <div class="_tedx_link">
           <a href="{{ url('') }}" cursor-class="hover">Unduh Invoice Pembelian</a>
         </div>
@@ -47,7 +47,16 @@
         </div>
         @else
         <div class="_tedx_link" style="color: #ffffff !important;">
-          <p cursor-class="hover" style="color: #ffffff !important;">Status Pembelian: {{ $ticketUser->payment->payment_status }}</p>
+          <p cursor-class="hover" style="color: #ffffff !important;">
+            Status Pembelian: 
+            <strong>
+              {{
+                $ticketUser->payment_status === 'pending'
+                  ? 'Pending'
+                  : 'Ditolak'
+              }}
+            </strong>
+          </p>
         </div>
         @endif
       </div>
@@ -67,7 +76,7 @@
             </div>
           </div>
           <div class="_tedx_ticket_token">
-            <span>{{ $ticketUser->payment->payment_status === 'pending' ? 'AXXX XXXX XXXX XXXA' : $ticketUser->token }}</span>
+            <span>{{ $ticketUser->payment_status === 'pending' ? 'AXXX XXXX XXXX XXXA' : $ticketUser->userTicket->code }}</span>
           </div>
         </div>
         <svg class="_tedx_ticket_right" viewBox="0 0 386 400" fill="none" xmlns="http://www.w3.org/2000/svg">

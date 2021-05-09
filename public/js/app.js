@@ -19387,7 +19387,9 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // Requir
 
 
 
-__webpack_require__(/*! ./plugins/custom-cursor */ "./resources/js/plugins/custom-cursor.js"); // Home Page
+__webpack_require__(/*! ./plugins/custom-cursor */ "./resources/js/plugins/custom-cursor.js");
+
+__webpack_require__(/*! ./plugins/preloader */ "./resources/js/plugins/preloader.js"); // Home Page
 
 
 __webpack_require__(/*! ./modules/menu */ "./resources/js/modules/menu.js");
@@ -20074,7 +20076,7 @@ var speakers = {
     url: 'https://ik.imagekit.io/tedxub/diego_17X4gmRxS.jpg'
   },
   clara: {
-    name: 'Clara Tunjung Pramesti',
+    name: 'Clara Tunjung Paramesti',
     profession: 'Mahasiswa',
     title: 'Seni Sebagai Rumah Bukan Limbah',
     description: "\n    Untuk sebagian orang karya seni diperuntukan untuk konsumsi publik, namun tidak sedikit karya seni yang dibuat untuk kepuasan pribadi.\n    <br></br>\n    Clara mencoba menjelaskan dari sudut pandangnya mengenai seni sebagai rumah adalah tempat untuk mencurahkan segala rasa dan karya seni yang tersimpan mampu memberikan ingatan-ingatan terhadap kejadian tertentu yang dapat memberikan pembelajaran di kemudian hari.\n    ",
@@ -20084,7 +20086,7 @@ var speakers = {
     name: 'Jimi Multhazam',
     profession: 'Musisi',
     title: 'Kekuatan Komposisi dan Cerita',
-    description: "Pada pertengahan dekade 2000-an, terdapat satu nama yang diasosiasikan dengan gerak laku juga syair yang flamboyan saat ia melantunkan tembang-tembangnya di panggung The Upstairs, nama tersebut adalah Jimi Multhazam. Menapak pada dekade 2010-an, Jimi melahirkan proyek barunya yang bernama Morfem. Entah melalui synthesizer ataupun distorsi, pria yang juga dikenal dengan nama Jimi \u2018\u2018Danger\u2019\u2019 ini sudi menggunakan media atau teknik apa saja untuk mengekspresikan gagasannya. \n    <br></br>\n    Pada talks kali ini,  Jimi Multhazam akan membicarakan bagaimana secara abstrak\n    ",
+    description: "Pada pertengahan dekade 2000-an, terdapat satu nama yang diasosiasikan dengan gerak laku juga syair yang flamboyan saat ia melantunkan tembang-tembangnya di panggung The Upstairs, nama tersebut adalah Jimi Multhazam. Menapak pada dekade 2010-an, Jimi melahirkan proyek barunya yang bernama Morfem. Entah melalui synthesizer ataupun distorsi, pria yang juga dikenal dengan nama Jimi \u2018\u2018Danger\u2019\u2019 ini sudi menggunakan media atau teknik apa saja untuk mengekspresikan gagasannya. \n    <br></br>\n    Pada talks kali ini,  Jimi Multhazam akan membicarakan bagaimana secara abstrak menggerakan orang untuk berkarya dengan cara distingtifnya masing-masing.\n    ",
     url: 'https://ik.imagekit.io/tedxub/jimi_pe2cB_9Ovan.jpg'
   },
   hengki: {
@@ -20112,7 +20114,7 @@ var speakers = {
     name: 'Bondan Sekari Adi',
     profession: 'Value Investor',
     title: 'Manifestasi Budaya dengan Kuliner ',
-    description: "Nasionalisme dan kecintaan suatu rakyat terhadap bangsanya juga terikat dengan bagaimana sebuah mimpi diciptakan dan dimanifestasikan oleh bangsa tersebut. Konstruksi dari nilai-nilai yang dibentuk untuk merepresentasikan wujud dari bangsa tersebut juga merupakan kewajiban bagi pemerintah dan warganya  dalam membentuk suatu negara. Seperti contoh yang paling terkenal dari Amerika Serikat di mana mereka mengkonstruksi The American Dream melalui hollywood dan media lainnya. Membentuk perwujudan atas sifat dan mimpi dari Amerika. Lalu bagaimana dengan Indonesia? Dalam sejarah modern dan media kita, mimpi seperti apakah yang dikonstruksi untuk melambangkan Indonesia?\n    <br></br>\n    Pada talks kali ini, Abdul Hair akan mendiskusikan sebuah konstruksi nilai-nilai wujud kebudayaan  yang terjadi secara masif dan universal.\n    ",
+    description: "Berawal dari film, sebuah kuliner menjadi solusi atas keresahan yang Bondan alami selama ini. Bondan menghadirkan one sliced pizza yang disajikan dengan harga ekonomis karena melihat peluang dari kacamata yang berbeda serta stigma masyarakat mengenai pizza. Reaksi dan antusiasme dari masyarakat dapat meluaskan pasar yang ada sehingga ketakutan akan ketertinggalan tren menghilang.\n    <br></br>\n    Pada talk kali ini, Bondan akan membahas mengenai perjalanan yang ia lalui dalam menciptakan sebuah nilai yang terinspirasi dari budaya luar namun dapat diadaptasi dengan keadaan masyarakat lokal yang kemudian diterima dan tumbuh dengan baik.    \n    ",
     url: 'https://ik.imagekit.io/tedxub/bondan_98mJccjBp.JPG'
   }
 };
@@ -20171,8 +20173,7 @@ if (videoTeaser && videoMask && videoText) {
     animation: timeline.to(videoMask, {
       backgroundSize: '120%'
     }).to(videoText, {
-      opacity: 1,
-      y: '-50%'
+      opacity: 1
     }, '<'),
     scrub: 2
   });
@@ -20318,6 +20319,17 @@ setTimeout(function () {
   scroller.update();
 }, 1000);
 /* harmony default export */ __webpack_exports__["default"] = (scroller);
+
+/***/ }),
+
+/***/ "./resources/js/plugins/preloader.js":
+/*!*******************************************!*\
+  !*** ./resources/js/plugins/preloader.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
 
 /***/ }),
 

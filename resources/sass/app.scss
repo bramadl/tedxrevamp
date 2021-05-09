@@ -37,6 +37,7 @@
 @import "components/title";
 @import "components/ticket";
 @import "components/form";
+@import "components/preloader";
 
 body {
     font-family: 'Open Sans', sans-serif;
@@ -87,4 +88,3 @@ body {
     @include lg { padding-top: 150px; }
     margin: 150px 0;
 }
-
