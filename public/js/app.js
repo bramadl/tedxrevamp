@@ -19416,6 +19416,26 @@ if (buyTicketLink) {
   });
 }
 
+var goToLinks = document.querySelectorAll('a.go-to');
+
+if (goToLinks.length) {
+  goToLinks.forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      var hash = e.target.href.split('#')[e.target.href.split('#').length - 1];
+      sessionStorage.setItem('goto', hash);
+      location.href = '/about';
+    });
+  });
+}
+
+if (location.pathname === '/about') {
+  if (sessionStorage.getItem('goto')) {
+    _plugins_locomotiveScroll__WEBPACK_IMPORTED_MODULE_0__["default"].scrollTo("#".concat(sessionStorage.getItem('goto')));
+    sessionStorage.clear();
+  }
+}
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":

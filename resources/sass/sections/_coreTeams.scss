@@ -1,3 +1,9 @@
+._tedx_section_core ._tedx_section_title h2 {
+  font-size: 2rem !important;
+  @include md { font-size: 6rem !important; }
+  @include lg { font-size: 8rem !important; }
+  @include xl { font-size: 10rem !important; }
+}
 #coreTeams {
   @include md { padding-bottom: 150px; }
   

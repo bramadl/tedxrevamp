@@ -26,7 +26,7 @@
 
 @section('content')
 <div data-scroll-section>
-  <div id="ted" class="_tedx_about_ted_wrapper">
+  <div id="about-ted" class="_tedx_about_ted_wrapper">
     <div class="_tedx_about_ted_content">
       <div class="_tedx_about_ted_content_container">
         <div class="_tedx_title_alt">
@@ -49,7 +49,7 @@
     </div>
   </div>
 
-  <div id="tedx" class="_tedx_about_tedx_wrapper">
+  <div id="about-tedx" class="_tedx_about_tedx_wrapper">
     <div class="_tedx_about_tedx_image">
       <img src="{{ asset('img/tedx_talk.png') }}">
     </div>

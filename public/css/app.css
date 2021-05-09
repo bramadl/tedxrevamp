@@ -3257,6 +3257,28 @@ textarea {
   }
 }
 
+._tedx_section_core ._tedx_section_title h2 {
+  font-size: 2rem !important;
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_section_core ._tedx_section_title h2 {
+    font-size: 6rem !important;
+  }
+}
+
+@media only screen and (min-width: 996px) {
+  ._tedx_section_core ._tedx_section_title h2 {
+    font-size: 8rem !important;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  ._tedx_section_core ._tedx_section_title h2 {
+    font-size: 10rem !important;
+  }
+}
+
 @media only screen and (min-width: 768px) {
   #coreTeams {
     padding-bottom: 150px;
