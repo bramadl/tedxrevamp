@@ -214,7 +214,7 @@
       </div>
       <div class="_tedx_section_text">
         <h3>The Volunteers</h3>
-        <p>Terima kasih adalah dua kata yang mudah diartikan dalam bahasa manapun. Bersama dengan kalian, kita saling beralur dan membaur mewujudkan mimpi yang belum terwujud. Biarlah Manifestasi Peradaban menjadi kisah dan pengalaman baru untuk kita sebagai individu di tengah carut-marut dunia virtual yang melelahkan. <br> Kami bangga dengan kalian!</p>
+        <p>Terima kasih adalah dua kata yang mudah diartikan dalam bahasa manapun. Bersama dengan kalian, kita saling beralur dan membaur mewujudkan mimpi yang belum terwujud. Biarlah Manifestasi Peradaban menjadi kisah dan pengalaman baru untuk kita sebagai individu di tengah carut-marut dunia virtual yang melelahkan.</p>
       </div>
     </div>
   </div>
