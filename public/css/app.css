@@ -2204,7 +2204,7 @@ textarea {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -25%);
+  transform: translate(-50%, -50%);
   text-align: center;
   z-index: 1;
   opacity: 0;
@@ -2234,12 +2234,6 @@ textarea {
   font-family: "Open Sans", sans-serif;
   text-transform: uppercase;
   margin: 1.5rem 0;
-}
-
-@media only screen and (min-width: 768px) {
-  #videoTeaser ._tedx_video_teaser ._tedx_video_mask ._tedx_video_text h2 {
-    font-size: 4rem;
-  }
 }
 
 #videoTeaser ._tedx_video_teaser ._tedx_video_mask ._tedx_video_text button {

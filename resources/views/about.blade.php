@@ -10,7 +10,7 @@
           <h2 data-scroll data-scroll-direction="horizontal" data-scroll-speed="2">About</h2>
         </div>
         <div class="_tedx_section_text">
-          <h3>Tema: Manifestasi Peradaban</h3>
+          <h3>TENTANG TEDxUniversitasBrawijaya</h3>
           <p>TEDxUniversitasBrawijaya merupakan TEDx University pertama di Malang yang diselenggarakan dan diinisiasi secara independen oleh mahasiswa Universitas Brawijaya dibawah lisensi TED yang telah berbagi ide kepada masyarakat luas sejak tahun 2015. TEDxUniversitasBrawijaya sekaligus menjadi upaya aktif dalam penyebaran gagasan unik dan transformatif dengan menjaring pembicara-pembicara lokal serta nasional yang telah terkurasi. </p>
         </div>
       </div>
@@ -77,10 +77,10 @@
   <div class="_tedx_section_title_overlay">
     <div class="_tedx_section_title_wrapper">
       <div class="_tedx_section_title">
-        <h2 data-scroll data-scroll-direction="horizontal" data-scroll-speed="-2">Teams</h2>
+        <h2 data-scroll data-scroll-direction="horizontal" data-scroll-speed="-2">Core Team</h2>
       </div>
       <div class="_tedx_section_text">
-        <h3>The Core Teams</h3>
+        <h3>Core Team</h3>
         <p>TEDxUniversitasBrawijaya dinahkodai oleh berbagai sosok individu yang tergabung dalam Core Team. Mereka merupakan bagian dari komunitas lokal Mahasiswa/i Universitas Brawijaya yang mempunyai satu tujuan yang sama, yaitu menjalankan “Ideas Worth Spreading.”</p>
       </div>
     </div>
@@ -214,7 +214,7 @@
       </div>
       <div class="_tedx_section_text">
         <h3>The Volunteers</h3>
-        <p>Terima kasih karena telah memilih untuk saling membersamai di TEDxUniversitasBrawijaya 2021. Biarlah Manifestasi Peradaban menjadi kisah dan pengalaman baru untuk kita sebagai individu di tengah carut-marut dunia virtual yang melelahkan. Kami bangga dengan kalian!</p>
+        <p>Terima kasih adalah dua kata yang mudah diartikan dalam bahasa manapun. Bersama dengan kalian, kita saling beralur dan membaur mewujudkan mimpi yang belum terwujud. Biarlah Manifestasi Peradaban menjadi kisah dan pengalaman baru untuk kita sebagai individu di tengah carut-marut dunia virtual yang melelahkan. <br> Kami bangga dengan kalian!</p>
       </div>
     </div>
   </div>

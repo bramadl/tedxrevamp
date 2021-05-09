@@ -34,7 +34,7 @@
       </div>
       <div class="_tedx_footer_extra_links">
         <a href="{{ url('/faqs') }}" cursor-class="hover">Questions About The Event</a>
-        <a href="{{ url('/about') }}" cursor-class="hover">People Behind The Team</a>
+        <a href="{{ url('/about#behind-the-team') }}" cursor-class="hover">People Behind The Team</a>
       </div>
     </div>
   </div>

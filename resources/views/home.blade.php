@@ -12,7 +12,7 @@
       </h1>
     </div>
     <div class="_tedx_subtitle">
-      <h2>Membicarakan yang dibicarakan manusia</h2>
+      <h2>Yang Dibicarakan Ketika Membicarakan Manusia</h2>
     </div>
     <div class="_tedx_register_cta">
       <button cursor-class="hover">Beli Tiket</button>
@@ -35,7 +35,7 @@
       <line opacity="0.5" x1="0.5" y1="2.18557e-08" x2="0.499993" y2="150" stroke="white" />
     </svg>
     <div class="text">
-      May 30, 2021
+      29 - 30 Mei 2021
     </div>
   </div>
 </div>
@@ -62,9 +62,9 @@
       </div>
     </div>
     <div class="_tedx_section_about_cta">
-      <div class="_tedx_link" cursor-class="hover"><a href="{{ url('/about') }}">About TED</a></div>
+      <div class="_tedx_link" cursor-class="hover"><a href="{{ url('/about#ted') }}">About TED</a></div>
       <div class="_tedx_link" cursor-class="hover"><a href="{{ url('/about') }}">About TEDxUniversitasBrawijaya</a></div>
-      <div class="_tedx_link" cursor-class="hover"><a href="{{ url('/about') }}">About TEDx</a></div>
+      <div class="_tedx_link" cursor-class="hover"><a href="{{ url('/about#tedx') }}">About TEDx</a></div>
     </div>
   </div>
 </section>
@@ -75,7 +75,7 @@
     <div class="_tedx_video_mask">
       <div class="_tedx_video_text">
         <h1><span>TEDx</span>UniversitasBrawijaya</h1>
-        <h2>Teaser Video</h2>
+        <h2>Manifestasi Peradaban: Yang Dibicarakan Ketika Membicarakan Manusia</h2>
         <button cursor-class="hover" class="open-video-player">Play Video</button>
       </div>
     </div>
@@ -91,7 +91,7 @@
       </div>
       <div class="_tedx_section_text">
         <h3>Tema: Manifestasi Peradaban</h3>
-        <p>Peradaban dimaknai sebagai pola kebudayaan yang terstruktur dalam menilai tingkatan suatu budaya di masyarakat. TEDx Universitas Brawijaya 2021 menghadirkan para pembicara terbaik di bidangnya yang akan berbagi gagasan dan pengalaman denganmu untuk merayakan manifestasi peradaban.</p>
+        <p>Peradaban dimaknai sebagai pola kebudayaan yang terstruktur dalam menilai tingkatan suatu budaya di masyarakat. TEDxUniversitasBrawijaya 2021 menghadirkan para pembicara terbaik di bidangnya yang akan berbagi gagasan dan pengalaman denganmu untuk merayakan Manifestasi Peradaban.</p>
       </div>
     </div>
   </div>
@@ -142,7 +142,7 @@
       <div class="_tedx_speaker_avatar" data-target="clara" cursor-class="speaker">
         <img src="https://ik.imagekit.io/tedxub/clara_lMJ9QkOIr3X.jpg">
         <div class="_tedx_speaker_info">
-          <h1>Clara Tunjung Pramesti</h1>
+          <h1>Clara Tunjung Paramesti</h1>
           <p>Mahasiswa</p>
         </div>
       </div>
@@ -230,7 +230,7 @@
       </div>
       <div class="_tedx_section_text">
         <h3>PRESALE TICKETS</h3>
-        <p>Pesan tiket Presale 1 pada tanggal 11-17 Mei sekarang untuk mendapatkan penawaran menarik! Kesempatan terakhir! Beli tiket Presale 2 pada tanggal 18-24 Mei sekarang untuk mengisi kursi terbatas.
+        <p>Pesan tiket Presale 1 pada tanggal 11-17 Mei sekarang untuk mendapatkan penawaran menarik! <br> Kesempatan terakhir! Beli tiket Presale 2 pada tanggal 18-24 Mei sekarang untuk mengisi kursi terbatas.
         </p>
       </div>
     </div>
