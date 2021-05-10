@@ -11,14 +11,14 @@
     grid-template-columns: repeat(1, 1fr);
     @include md { grid-template-columns: repeat(2, 1fr); }
     place-items: center;
-    text-align: center;
+    text-align: left;
 
     ._tedx_team_container {
       margin-bottom: 2rem;
     }
 
     h2 {
-      font-family: 'Playfair Display';
+      font-family: 'Helvetica';
       font-size: 1.15rem;
       @include md { font-size: 1rem; }
       @include lg { font-size: 1.5rem; }
@@ -27,11 +27,11 @@
     }
 
     ul {
-      margin-top: 2rem;
+      margin-top: 1rem;
 
       li {
         margin: .5rem 0;
-        @include lg { margin: 1rem 0; }
+        @include lg { margin: .5rem 0; }
         font-size: .75rem;
         @include md { font-size: .85rem; }
         @include lg { font-size: 1rem; }

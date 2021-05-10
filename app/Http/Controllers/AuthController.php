@@ -45,7 +45,7 @@ class AuthController extends Controller
             'token' => sha1(time()),
         ]);
 
-        Mail::to($user->email_address)->send(new VerifyMail($user));
+        Mail::to($user->email_address)->queue(new VerifyMail($user));
 
         $route = '/member/confirm?email=' . $user->email_address . '&token=' . $verifyUser->token;
         return redirect($route);
@@ -138,7 +138,7 @@ class AuthController extends Controller
                         ->where('id', Auth::id())
                         ->first();
 
-        Mail::to($user->email_address)->send(new VerifyMail($user));
+        Mail::to($user->email_address)->queue(new VerifyMail($user));
 
         return view('/auth.confirm-email', [
             'user' => $user
@@ -182,7 +182,7 @@ class AuthController extends Controller
             $user = Auth::user();
             return redirect()
                     ->intended('member/dashboard')
-                    ->with('success', 'Selamat datang, ' . $user->first_name . $user->last_name . '!');
+                    ->with('success', 'Selamat datang, ' . $user->first_name . ' ' . $user->last_name . '!');
         } else {
             return redirect()
                     ->back()

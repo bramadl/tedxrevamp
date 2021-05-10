@@ -1,9 +1,15 @@
 @extends('layouts.payment')
 
 @section('content')
-<div class="_tedx_payment_title">
-  <h1>Pembayaran Token</h1><br>
-  <h1><span>TEDx</span>UniversitasBrawjiaya</h1>
+<div
+  class="_tedx_payment_title"
+  data-scroll-section=""
+>
+  <h1>Pembayaran Tiket <span>TEDx</span>UniversitasBrawjiaya</h1>
+  <ul class="_tedx_payment_method_container">
+    <li><strong>1240007458095‬</strong> A.N Sheila Istiningtyas Padmarini (Mandiri)</li>
+    <li><strong>3151197891</strong> A.N Dio Arya Pratama (BCA)</li>
+  </ul>
 </div>
 <form
   action="{{ url('/ticket/payment') }}"

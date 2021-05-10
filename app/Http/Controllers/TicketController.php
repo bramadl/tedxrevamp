@@ -37,19 +37,19 @@ class TicketController extends Controller
     
     public function getCurrentTicketByDate($date)
     {
-        $presaleOneStartDate = date('Y-m-d', strtotime('2021-05-09'));
+        $presaleOneStartDate = date('Y-m-d', strtotime('2021-05-11'));
         $presaleOneEndDate = date('Y-m-d', strtotime('2021-05-17'));
         $presaleTwoStartDate = date('Y-m-d', strtotime('2021-05-18'));
         $presaleTwoEndDate = date('Y-m-d', strtotime('2021-05-24'));
 
         if (
-            (date('Y-m-d', strtotime($date . " +1 day")) >= $presaleOneStartDate) &&
-            (date('Y-m-d', strtotime($date . " +1 day")) <= $presaleOneEndDate)
+            (date('Y-m-d', strtotime($date . " + 1 days")) >= $presaleOneStartDate) &&
+            (date('Y-m-d', strtotime($date . " + 1 days")) <= $presaleOneEndDate)
         ) {
             return 'presale-1';
         } else if (
-            (date('Y-m-d', strtotime($date . " +1 day")) >= $presaleTwoStartDate) &&
-            (date('Y-m-d', strtotime($date . " +1 day")) <= $presaleTwoEndDate)
+            (date('Y-m-d', strtotime($date . " + 1 days")) >= $presaleTwoStartDate) &&
+            (date('Y-m-d', strtotime($date . " + 1 days")) <= $presaleTwoEndDate)
         ) {
             return 'presale-2';
         } else {
@@ -127,14 +127,17 @@ class TicketController extends Controller
         ]);
 
         $detailPayment = Payment::where('id', $payment->id)->with('ticket')->first();
-        Mail::to(Auth::user()->email_address)->send(new PaymentNotificationMail(Auth::user(), $detailPayment));
+        Mail::to(Auth::user()->email_address)->queue(new PaymentNotificationMail(Auth::user(), $detailPayment));
+
+        $ticket->stock = $ticket->stock - 1;
+        $ticket->save();
 
         return redirect()
                 ->route('invoice', [
                     'payment_id' => explode('.', $payment->payment_proof)[0],
                     'proof' => explode('.', $payment->payment_proof)[1]
                 ])
-                ->with('Invoice berhasil dikirim ke email kamu.');
+                ->with('success', 'Invoice berhasil dikirim ke email kamu.');
     }
 
     public function invoice(Request $request)
@@ -161,12 +164,13 @@ class TicketController extends Controller
         $payment_proof = $request->query('proof');
 
         $id = $payment_id . '.' . $payment_proof;
-        $payment = Payment::where('payment_proof', $id)->with('userTicket')->first();
+        $payment = Payment::where('payment_proof', $id)->with(['userTicket'])->first();
         if (!$payment) {
             return redirect('/');
         }
 
-        $pdf = PDF::loadview('ticket.invoice', [ 'payment' => $payment ]);
-        return $pdf->download('invoice-pembelian-ticket.pdf');
+        return view('ticket.invoice-pdf', [
+            'payment' => $payment
+        ]);
     }
 }

@@ -2,8 +2,10 @@
 const $ = (el) => document.querySelector(el)
 const hamburger = $('._tedx_hamburger')
 const close = $('#close')
-hamburger.addEventListener('click', openMenu)
-close.addEventListener('click', closeMenu)
+if (hamburger) {
+  hamburger.addEventListener('click', openMenu)
+  close.addEventListener('click', closeMenu)
+}
 
 function openMenu () {
   const menuWrapper = $('._tedx_menu_wrapper')

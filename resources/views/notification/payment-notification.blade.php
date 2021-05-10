@@ -144,9 +144,9 @@
   <section>
     <h2>Pembelian Tiket Livestreaming TEDxUniversitasBrawijaya 2021</h2>
     <div>
-      <p>Terimakasih kasih telah melakukan pembelian tiket livestreaming TEDxUniversitasBrawijaya 2021.</p>
+      <p>Terima kasih telah melakukan pembelian tiket livestream TEDxUniversitasBrawijaya 2021.</p>
       <p>Pembayaran kamu sedang dalam proses dan akan kami beritahu kembali melalui email <strong>{{ $user->email_address }}</strong> dalam waktu 1x24 jam.</p>
-      <a class="link" href="{{ url('ticket/invoice?payment_id=' . explode('.', $payment->payment_proof)[0] . '&proof=' . explode('.', $payment->payment_proof)[1]) }}">
+      <a class="link" href="{{ url('ticket/invoice/pdf?payment_id=' . explode('.', $payment->payment_proof)[0] . '&proof=' . explode('.', $payment->payment_proof)[1]) }}">
         Unduh Invoice Pembayaran
       </a>
       <small>Detail pembelian tiket dan status pembelian tiket dapat kamu lihat di <a href="{{ url('member/dashboard') }}">member area</a></small>

@@ -19,6 +19,16 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::put('payments/verify', 'API\PaymentController@verify');
+Route::put('refresh-tokens/verify', 'API\RefreshTokenController@verify');
+
 Route::apiResources([
-    'payments' => 'API\PaymentController'
+    'audiens' => 'API\AudiensController',
+    'cores' => 'API\CoreController',
+    'volunteers' => 'API\VolunteerController',
+    'speakers' => 'API\SpeakerController',
+    'talents' => 'API\TalentController',
+    'partners' => 'API\PartnerController',
+    'payments' => 'API\PaymentController',
+    'user-tickets' => 'API\UserTicketController',
+    'refresh-tokens' => 'API\RefreshTokenController',
 ]);

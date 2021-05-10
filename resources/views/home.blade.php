@@ -75,7 +75,7 @@
     <div class="_tedx_video_mask">
       <div class="_tedx_video_text">
         <h1><span>TEDx</span>UniversitasBrawijaya</h1>
-        <h2>Manifestasi Peradaban: Yang Dibicarakan Ketika Membicarakan Manusia</h2>
+        <h2>Manifestasi Peradaban: <br> <span>Yang Dibicarakan Ketika Membicarakan Manusia</span></h2>
         <button cursor-class="hover" class="open-video-player">Play Video</button>
       </div>
     </div>
@@ -230,7 +230,7 @@
       </div>
       <div class="_tedx_section_text">
         <h3>PRESALE TICKETS</h3>
-        <p>Pesan tiket Presale 1 pada tanggal 11-17 Mei sekarang untuk mendapatkan penawaran menarik! <br> Kesempatan terakhir! Beli tiket Presale 2 pada tanggal 18-24 Mei sekarang untuk mengisi kursi terbatas.
+        <p>Beli tiketmu sekarang dan bergabung bersama kami dalam menelusuri budaya populer masa kini!
         </p>
       </div>
     </div>
@@ -239,13 +239,11 @@
 
 <!-- Ticket Purchase -->
 <div id="ticketPurchase" data-scroll-section>
-
-  @foreach ($tickets as $key => $ticket)
   <div class="_tedx_ticket_container">
     <div class="_tedx_ticket_detail">
       <div class="_tedx_ticket_description">
         <div>
-          <h3><span>Ticket</span> Presale {{ $key + 1 }}</h3>
+          <h3><span>Ticket</span> Presale {{ $ticket->type === 'presale-1' ? '1' : '2' }}</h3>
         </div>
         <div>
           <p>{{ $ticket->description }}</p>
@@ -257,17 +255,10 @@
         </div>
       </div>
       <div class="_tedx_ticket_button">
-        @if ($presaleAvailable[$ticket->type])
         <a href="{{ url('/ticket/payment?type=' . $ticket->type) }}" cursor-class="hover">
-          <span>Beli Tiket</span>
+          <span>Beli Tiket (Stock: {{ $ticket->stock }})</span>
           <strong>Rp {{ number_format($ticket->price,2,',','.') }}</strong>
         </a>
-        @else
-        <button cursor-class="hover">
-          <span>Beli Tiket</span>
-          <strong>Rp {{ number_format($ticket->price,2,',','.') }}</strong>
-        </button>
-        @endif
       </div>
     </div>
     <div class="_tedx_ticket">
@@ -296,7 +287,6 @@
       </svg>
     </div>
   </div>
-  @endforeach
 
 </div>
 <!-- ./Ticket Purchase -->

@@ -2,15 +2,38 @@
 
 namespace App\Http\Controllers;
 
+use App\Partner;
 use App\Ticket;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
+    public function getCurrentTicketByDate($date)
+    {
+        $presaleOneStartDate = date('Y-m-d', strtotime('2021-05-11'));
+        $presaleOneEndDate = date('Y-m-d', strtotime('2021-05-17'));
+        $presaleTwoStartDate = date('Y-m-d', strtotime('2021-05-18'));
+        $presaleTwoEndDate = date('Y-m-d', strtotime('2021-05-24'));
+
+        if (
+            (date('Y-m-d', strtotime($date . " + 1 days")) >= $presaleOneStartDate) &&
+            (date('Y-m-d', strtotime($date . " + 1 days")) <= $presaleOneEndDate)
+        ) {
+            return 'presale-1';
+        } else if (
+            (date('Y-m-d', strtotime($date . " + 1 days")) >= $presaleTwoStartDate) &&
+            (date('Y-m-d', strtotime($date . " + 1 days")) <= $presaleTwoEndDate)
+        ) {
+            return 'presale-2';
+        } else {
+            return null;
+        }
+    }
+    
     public function determineTicketAvailability($startDate, $endDate) {
         $todayDate = date('Y-m-d');
-        $todayDate= date('Y-m-d', strtotime($todayDate));
+        $todayDate= date('Y-m-d', strtotime($todayDate . " + 1 days"));
 
         if (($todayDate >= $startDate) && ($todayDate <= $endDate)){
             return true;
@@ -20,23 +43,12 @@ class HomeController extends Controller
     }
     
     public function index()
-    {   
-        $presale = [
-            'presale-1' => $this->determineTicketAvailability(
-                date('Y-m-d', strtotime("11/05/2021")),
-                date('Y-m-d', strtotime("17/05/2021"))
-            ),
-            'presale-2' => $this->determineTicketAvailability(
-                date('Y-m-d', strtotime("18/05/2021")),
-                date('Y-m-d', strtotime("24/05/2021"))
-            )
-        ];
-
-        $tickets = Ticket::all();
+    {
+        $presaleType = $this->getCurrentTicketByDate(date('Y-m-d'));
+        $ticket = Ticket::where('type', $presaleType)->first();
         
         return view('home', [
-            'presaleAvailable' => $presale,
-            'tickets' => $tickets
+            'ticket' => $ticket
         ]);
     }
 
@@ -47,7 +59,11 @@ class HomeController extends Controller
 
     public function partners()
     {
-        return view('partners');
+        $partners = Partner::with('socialMedia')->get();
+
+        return view('partners', [
+            'partners' => $partners
+        ]);
     }
 
     public function faqs()
@@ -189,7 +205,7 @@ class HomeController extends Controller
         $coreDetail = array_slice($cores[$core], 0, $coreDetailLength - 2);
         
         return view('core-profile', [
-            'name' => $core,
+            'name' => $cores[$core]['name'],
             'core' => $cores[$core],
             'detail' => $coreDetail
         ]);

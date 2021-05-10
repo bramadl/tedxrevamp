@@ -19408,6 +19408,18 @@ __webpack_require__(/*! ./modules/about */ "./resources/js/modules/about.js"); /
 
 __webpack_require__(/*! ./modules/partners */ "./resources/js/modules/partners.js");
 
+var preloader = document.body.classList.contains('preloader');
+
+if (preloader) {
+  gsap.to('#preloader', {
+    opacity: 0,
+    pointerEvents: 'none',
+    duration: 1,
+    delay: 3,
+    ease: 'power2.inOut'
+  });
+}
+
 var buyTicketLink = document.querySelector('._tedx_register_cta');
 
 if (buyTicketLink) {
@@ -19855,8 +19867,11 @@ var $ = function $(el) {
 
 var hamburger = $('._tedx_hamburger');
 var close = $('#close');
-hamburger.addEventListener('click', openMenu);
-close.addEventListener('click', closeMenu);
+
+if (hamburger) {
+  hamburger.addEventListener('click', openMenu);
+  close.addEventListener('click', closeMenu);
+}
 
 function openMenu() {
   var menuWrapper = $('._tedx_menu_wrapper');
@@ -20371,8 +20386,8 @@ setTimeout(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/apple/Documents/University/Volunteers/Tedx/tedxrevamp/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/apple/Documents/University/Volunteers/Tedx/tedxrevamp/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/bramadl/Documents/Programming/Projects/tedxrevamp/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/bramadl/Documents/Programming/Projects/tedxrevamp/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

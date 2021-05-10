@@ -15,4 +15,9 @@ class RefreshToken extends Model
         'user_ticket_id',
         'reason'
     ];
+
+    public function userTickets()
+    {
+        return $this->belongsTo('App\UserTicket', 'user_ticket_id');
+    }
 }

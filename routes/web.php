@@ -27,6 +27,7 @@ Route::group(['middleware' => ['verified']], function () {
   Route::get('/ticket/payment', 'TicketController@payment')->name('payment');
   Route::post('/ticket/payment', 'TicketController@storePayment');
   Route::get('/ticket/invoice', 'TicketController@invoice')->name('invoice');
+  Route::get('/ticket/invoice/pdf', 'TicketController@printInvoice');
 });
 
 Route::group(['prefix' => '/member'], function () {
@@ -51,6 +52,7 @@ Route::group(['prefix' => '/member'], function () {
   Route::group(['middleware' => 'auth', 'name' => 'member.', 'as' => 'member.'], function () {
     Route::get('/dashboard', 'MemberController@dashboard')->name('dashboard');
     Route::get('/pembelian-ticket', 'MemberController@ticket')->name('ticket');
+    Route::get('/livestream', 'MemberController@livestream')->name('livestream');
     Route::get('/kelola-akun', 'MemberController@profile')->name('profile');
     Route::put('/kelola-akun', 'MemberController@updateProfile');
     Route::get('/permintaan-token', 'MemberController@token')->name('token');

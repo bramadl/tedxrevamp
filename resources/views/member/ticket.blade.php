@@ -40,7 +40,7 @@
       <div class="_tedx_tickets_info_link">
         @if($ticketUser->payment_status === 'confirmed')
         <div class="_tedx_link">
-          <a href="{{ url('') }}" cursor-class="hover">Unduh Invoice Pembelian</a>
+          <a href="{{ url('ticket/invoice/pdf?payment_id=' . explode('.', $ticketUser->payment_proof)[0] . '&proof=' . explode('.', $ticketUser->payment_proof)[1]) }}" cursor-class="hover">Unduh Invoice Pembelian</a>
         </div>
         <div class="_tedx_link">
           <a href="{{ url('member/permintaan-token') }}" cursor-class="hover">Refresh Token</a>

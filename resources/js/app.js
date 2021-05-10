@@ -19,6 +19,17 @@ require("./modules/about");
 // Partners Page
 require('./modules/partners')
 
+const preloader = document.body.classList.contains('preloader')
+if (preloader) {
+  gsap.to('#preloader', {
+    opacity: 0,
+    pointerEvents: 'none',
+    duration: 1,
+    delay: 3,
+    ease: 'power2.inOut'
+  })
+}
+
 const buyTicketLink = document.querySelector('._tedx_register_cta')
 if (buyTicketLink) {
   buyTicketLink.addEventListener('click', (e) => {

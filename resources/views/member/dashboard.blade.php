@@ -19,6 +19,7 @@
             <a href="" cursor-class="link">Kunjungi Pameran</a>
         </div>
     </div>
+    @if (Auth::user()->role === 'user')
     <div class="_tedx_dashboard_card_feature" cursor-class="overlay">
         <div class="_tedx_card_feature_title">
             <i class="fas fa-ticket-alt"></i>
@@ -31,6 +32,7 @@
             <a href="{{ url('member/pembelian-ticket') }}" cursor-class="link">Lihat Tiket</a>
         </div>
     </div>
+    @endif
     <div class="_tedx_dashboard_card_feature" cursor-class="overlay">
         <div class="_tedx_card_feature_title">
             <i class="fas fa-video"></i>
@@ -40,9 +42,11 @@
             <p>Kunjungi pameran karya terbaik dari Loka Hasta Karya dengan pengalaman virtual.</p>
         </div>
         <div class="_tedx_link_alt">
-            <a href="" cursor-class="link">Masuk Livestream</a>
+            <!-- <a href="{{ url('member/livestream') }}" cursor-class="link">Masuk Livestream</a> -->
+            <a href="{{ url('/member/dashboard') }}" cursor-class="link">Masuk Livestream</a>
         </div>
     </div>
+    @if (Auth::user()->role === 'core' || Auth::user()->role === 'volunteer')
     <div class="_tedx_dashboard_card_feature" cursor-class="overlay">
         <div class="_tedx_card_feature_title">
             <i class="fas fa-calendar-alt"></i>
@@ -55,6 +59,8 @@
             <a href="" cursor-class="link">Unduh Jadwal</a>
         </div>
     </div>
+    @endif
+    @if (Auth::user()->role === 'user')
     <div class="_tedx_dashboard_card_feature" cursor-class="overlay">
         <div class="_tedx_card_feature_title">
             <i class="fas fa-sync"></i>
@@ -67,6 +73,7 @@
             <a href="{{ url('/member/permintaan-token') }}" cursor-class="link">Buat Permintaan</a>
         </div>
     </div>
+    @endif
     <div class="_tedx_dashboard_card_feature" cursor-class="overlay">
         <div class="_tedx_card_feature_title">
             <i class="fas fa-user"></i>
@@ -97,6 +104,14 @@
     Toast.fire({
       icon: 'info',
       title: @json(session('info'))
+    })
+  </script>
+@endif
+@if (session('warning'))
+  <script>
+    Toast.fire({
+      icon: 'warning',
+      title: @json(session('warning'))
     })
   </script>
 @endif

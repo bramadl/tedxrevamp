@@ -32,7 +32,7 @@ class PaymentNotificationMail extends Mailable
      */
     public function build()
     {
-        $this->from($address = 'technical.tedxbrawijaya@gmail.com', $name = 'TEDxUniversitasBrawijaya2021')
+        return $this->from($address = 'technical.tedxbrawijaya@gmail.com', $name = 'TEDxUniversitasBrawijaya2021')
                 ->subject('Pembelian Ticket TEDxUniversitasBrawijaya2021')
                 ->view('notification.payment-notification');
     }

@@ -12,7 +12,7 @@
     
     .tedx_section_image_partners_content {
 
-        &:last-child {
+        &:nth-child(even) {
             @include md { margin-top: 200px; }
         }
 
@@ -55,9 +55,11 @@
                 }
             }
 
-            ul {
+            ul.social-media {
                 margin-top: .5rem;
-
+                display: flex;
+                align-items: center;
+                
                 li {
                     display: inline-block;
                     margin-right: .5rem;
@@ -84,7 +86,7 @@
                     span {
                         color: $white-50;
                         font-family: 'Open Sans', sans-serif;
-                        font-size: .8rem;
+                        font-size: 1rem;
                         text-decoration: none;
                         transition: .4s $cubiz-bezier;
 

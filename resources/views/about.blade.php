@@ -222,7 +222,7 @@
 
 <div id="volunteerTeams" data-scroll-section>
   <div class="_tedx_volunteer_container">
-    <div>
+    <div class="left">
       <div class="_tedx_team_container">
         <div class="_tedx_link">
           <h2>Curator</h2>
@@ -270,10 +270,10 @@
         </ul>
       </div>
     </div>
-    <div>
+    <div class="right">
       <div class="_tedx_team_container">
         <div class="_tedx_link">
-          <h2>Communication, Editorials, and Marketing</h2>
+          <h2>Communication, Editorial, and Marketing</h2>
         </div>
         <ul>
           <li>Achmad Ramadhona Choir</li>
@@ -352,12 +352,20 @@
     <div class="_tedx_timeline _tedx_timeline_one">
       <div class="_tedx_timeline_container">
         <div>
-          <h1>Pendaftaran Elaborasi Ekspresi</h1>
-          <p>10-17 Maret 2021</p>
+          <h1>Grand Theme</h1>
+          <p>23 Januari 2021</p>
         </div>
       </div>
     </div>
     <div class="_tedx_timeline _tedx_timeline_two">
+      <div class="_tedx_timeline_container">
+        <div>
+          <h1>Lokarona</h1>
+          <p>11 Maret 2021</p>
+        </div>
+      </div>
+    </div>
+    <div class="_tedx_timeline _tedx_timeline_three">
       <div class="_tedx_timeline_container">
         <div>
           <h1>Elaborasi Ekspresi</h1>
@@ -365,35 +373,27 @@
         </div>
       </div>
     </div>
-    <div class="_tedx_timeline _tedx_timeline_three">
-      <div class="_tedx_timeline_container">
-        <div>
-          <h1>Gerai Sorai</h1>
-          <p>12-20 April 2021</p>
-        </div>
-      </div>
-    </div>
     <div class="_tedx_timeline _tedx_timeline_four">
       <div class="_tedx_timeline_container">
         <div>
-          <h1>Pendaftaran Loka Hasta Karya</h1>
-          <p>21 April - 4 Mei 2021</p>
+          <h1>Gerai Sorai</h1>
+          <p>17 - 20 April 2021</p>
         </div>
       </div>
     </div>
     <div class="_tedx_timeline _tedx_timeline_five">
       <div class="_tedx_timeline_container">
         <div>
-          <h1>Loka Hasta Karya</h1>
-          <p>21 Mei 2021</p>
+          <h1>Anima</h1>
+          <p>7 Mei 2021</p>
         </div>
       </div>
     </div>
     <div class="_tedx_timeline _tedx_timeline_six">
       <div class="_tedx_timeline_container">
         <div>
-          <h1>Virtual Exhibition</h1>
-          <p>20-27 Mei 2021</p>
+          <h1>Loka Hasta Karya</h1>
+          <p>20 - 27 Mei 2021</p>
         </div>
       </div>
     </div>
@@ -401,10 +401,18 @@
       <div class="_tedx_timeline_container">
         <div>
           <h1>Puncak Acara</h1>
-          <p>29-30 Mei 2021</p>
+          <p>29 - 30 Mei 2021</p>
         </div>
       </div>
     </div>
+    <!-- <div class="_tedx_timeline _tedx_timeline_six">
+      <div class="_tedx_timeline_container">
+        <div>
+          <h1>Virtual Exhibition</h1>
+          <p>20 - 27 Mei 2021</p>
+        </div>
+      </div>
+    </div> -->
   </div>
 </div>
 @endsection

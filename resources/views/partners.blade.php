@@ -21,66 +21,64 @@
 @endsection
 
 @section('content')
-<section id="partnersList" data-scroll-section>
-    <div class="_tedx_section_image_partners_container">
-        <div class="tedx_section_image_partners_content" data-scroll data-scroll-speed="1">
-            <div class="_tedx_partner_image_wrapper">
-                <img src="{{ asset('img/cocacola.png') }}" alt="">
-            </div>
-            <div class="_tedx_partner_profile_wrapper">
-                <h1>Coca Cola</h1>
-                <ul class="a">
-                    <li><span cursor-class="subtle">Sponsor</span></li>
-                    <li><a href="" cursor-class="hover">Instagram</a></li>
-                    <li><a href="" cursor-class="hover">Facebook</a></li>
-                    <li><a href="" cursor-class="hover">Whatsapp</a></li>
-                </ul>
-            </div>
+<section id="partnersList" class="_tedx_section_image_partners_container" data-scroll-section>
+    @foreach ($partners as $partner)
+    <div class="tedx_section_image_partners_content" data-scroll>
+        <div class="_tedx_partner_image_wrapper">
+            <img src="{{ url(env('TEDXBRAWIJAYA_URL') . '/storage/brands/' . $partner->avatar) }}" alt="">
         </div>
-        <div class="tedx_section_image_partners_content" data-scroll data-scroll-speed="1">
-            <div class="_tedx_partner_image_wrapper">
-                <img src="{{ asset('img/cocacola.png') }}" alt="">
-            </div>
-            <div class="_tedx_partner_profile_wrapper">
-                <h1>Coca Cola</h1>
-                <ul class="a">
-                    <li><span cursor-class="subtle">Sponsor</span></li>
-                    <li><a href="" cursor-class="hover">Instagram</a></li>
-                    <li><a href="" cursor-class="hover">Facebook</a></li>
-                    <li><a href="" cursor-class="hover">Whatsapp</a></li>
-                </ul>
-            </div>
+        <div class="_tedx_partner_profile_wrapper">
+            <h1>{{ $partner->name }}</h1>
+            <ul class="social-media">
+                <li><span cursor-class="subtle">Sponsor</span></li>
+                @foreach ($partner->socialMedia as $socialMedia)
+                <li><a href="{{ $socialMedia->url }}" cursor-class="hover">{{ $socialMedia->tag }}</a></li>
+                @endforeach
+            </ul>
         </div>
     </div>
-    <div class="_tedx_section_image_partners_container" data-scroll data-scroll-speed="2">
-        <div class="tedx_section_image_partners_content">
-            <div class="_tedx_partner_image_wrapper">
-                <img src="{{ asset('img/cocacola.png') }}" alt="">
-            </div>
-            <div class="_tedx_partner_profile_wrapper">
-                <h1>Coca Cola</h1>
-                <ul class="a">
-                    <li><span cursor-class="subtle">Supported By</span></li>
-                    <li><a href="" cursor-class="hover">Instagram</a></li>
-                    <li><a href="" cursor-class="hover">Facebook</a></li>
-                    <li><a href="" cursor-class="hover">Whatsapp</a></li>
-                </ul>
-            </div>
+    @endforeach
+    <!-- <div class="tedx_section_image_partners_content" data-scroll data-scroll-speed="1">
+        <div class="_tedx_partner_image_wrapper">
+            <img src="{{ asset('img/cocacola.png') }}" alt="">
         </div>
-        <div class="tedx_section_image_partners_content" data-scroll data-scroll-speed="2">
-            <div class="_tedx_partner_image_wrapper">
-                <img src="{{ asset('img/cocacola.png') }}" alt="">
-            </div>
-            <div class="_tedx_partner_profile_wrapper">
-                <h1>Coca Cola</h1>
-                <ul class="a">
-                    <li><span cursor-class="subtle">Partnership</span></li>
-                    <li><a href="" cursor-class="hover">Instagram</a></li>
-                    <li><a href="" cursor-class="hover">Facebook</a></li>
-                    <li><a href="" cursor-class="hover">Whatsapp</a></li>
-                </ul>
-            </div>
+        <div class="_tedx_partner_profile_wrapper">
+            <h1>Coca Cola</h1>
+            <ul class="a">
+                <li><span cursor-class="subtle">Sponsor</span></li>
+                <li><a href="" cursor-class="hover">Instagram</a></li>
+                <li><a href="" cursor-class="hover">Facebook</a></li>
+                <li><a href="" cursor-class="hover">Whatsapp</a></li>
+            </ul>
         </div>
     </div>
+    <div class="tedx_section_image_partners_content">
+        <div class="_tedx_partner_image_wrapper">
+            <img src="{{ asset('img/cocacola.png') }}" alt="">
+        </div>
+        <div class="_tedx_partner_profile_wrapper">
+            <h1>Coca Cola</h1>
+            <ul class="a">
+                <li><span cursor-class="subtle">Supported By</span></li>
+                <li><a href="" cursor-class="hover">Instagram</a></li>
+                <li><a href="" cursor-class="hover">Facebook</a></li>
+                <li><a href="" cursor-class="hover">Whatsapp</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="tedx_section_image_partners_content" data-scroll data-scroll-speed="2">
+        <div class="_tedx_partner_image_wrapper">
+            <img src="{{ asset('img/cocacola.png') }}" alt="">
+        </div>
+        <div class="_tedx_partner_profile_wrapper">
+            <h1>Coca Cola</h1>
+            <ul class="a">
+                <li><span cursor-class="subtle">Partnership</span></li>
+                <li><a href="" cursor-class="hover">Instagram</a></li>
+                <li><a href="" cursor-class="hover">Facebook</a></li>
+                <li><a href="" cursor-class="hover">Whatsapp</a></li>
+            </ul>
+        </div>
+    </div> -->
 </section>
 @endsection

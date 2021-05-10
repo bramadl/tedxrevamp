@@ -30,6 +30,15 @@
 </head>
 
 <body class="custom-cursor">
+  <div id="preloader" class="wrapper">
+    <div class="main-circle">
+      <div class="green-circle">
+        <div class="brown-circle">
+
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="_tedx" data-scroll-container>
     @include('layouts.partials.menu')
     <div class="_tedx_header_wrapper" data-scroll-section>

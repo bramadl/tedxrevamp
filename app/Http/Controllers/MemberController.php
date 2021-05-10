@@ -48,6 +48,25 @@ class MemberController extends Controller
 
     public function token()
     {
+        $userTicket = UserTicket::with('payment')
+                                ->whereHas('payment', function ($query) {
+                                    $query->where('user_id', Auth::id());
+                                })
+                                ->first();
+
+        $refreshToken = RefreshToken::where('user_ticket_id', $userTicket->id)->first();
+        if ($refreshToken) {
+            if ($userTicket->refresh_token) {
+                return redirect()
+                    ->back()
+                    ->with('warning', 'Permintaan token hanya bisa dilakukan sekali.');
+            } else {
+                return redirect()
+                    ->back()
+                    ->with('warning', 'Kamu telah membuat permintaan token. Silahkan menunggu.');
+            }
+        }
+        
         return view('member.token');
     }
 
@@ -75,15 +94,21 @@ class MemberController extends Controller
                     ->with('error', 'Token dan Kode tiket tidak ditemukan.');
         }
 
-        $refreshToken = RefreshToken::where('payment_id', $userTicket->payment->id)->first();
+        $refreshToken = RefreshToken::where('user_ticket_id', $userTicket->id)->first();
         if ($refreshToken) {
-            return redirect()
+            if ($userTicket->refresh_token) {
+                return redirect()
+                    ->back()
+                    ->with('warning', 'Permintaan token hanya bisa dilakukan sekali.');
+            } else {
+                return redirect()
                     ->back()
                     ->with('warning', 'Kamu telah membuat permintaan token. Silahkan menunggu.');
+            }
         }
         
         RefreshToken::create([
-            'payment_id' => $userTicket->payment->id,
+            'user_ticket_id' => $userTicket->id,
             'reason' => $validated['reason']
         ]);
 
@@ -101,5 +126,36 @@ class MemberController extends Controller
         return view('member.ticket', [
             'ticketUser' => $ticketUser
         ]);
+    }
+
+    public function livestream(Request $request)
+    {
+        if (Auth::user()->role !== 'user') {
+            return "Selamat datang di livestream";
+        }
+        
+        $payment = Payment::where('user_id', Auth::id())
+                            ->with('userTicket')
+                            ->first();
+        if (!$payment) {
+            return redirect()
+                    ->route('member.dashboard')
+                    ->with('warning', 'Kamu belum memiliki ticket.');
+        }
+
+        $userTicket = UserTicket::where('payment_id', $payment->id)
+                                ->first();
+
+        if ($userTicket->refresh_token && !$request->session()->has('_token_ticket')) {
+            return redirect()
+                ->route('member.dashboard')
+                ->with('warning', 'Kamu telah menggunakan token tiket.');
+        }
+
+        $request->session()->put('_token_ticket', $userTicket->code);
+        $userTicket->refresh_token = 1;
+        $userTicket->save();
+
+        return "Selamat datang di livestream!";
     }
 }
