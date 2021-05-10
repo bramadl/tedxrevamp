@@ -251,7 +251,7 @@
           <p>TED Talks | Virtual Exhibition | TED Kit | Special Performance</p>
         </div>
         <div>
-          <a href="#" cursor-class="hover">Syarat dan Ketentuan</a>
+          <a href="{{ asset('pdf/ketentuan-ticket.pdf') }}" cursor-class="hover">Syarat dan Ketentuan</a>
         </div>
       </div>
       <div class="_tedx_ticket_button">

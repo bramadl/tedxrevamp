@@ -216,7 +216,7 @@
       <li>Akses <a href="{{ url('member/dashboard') }}">member area</a> kamu untuk mendapatkan informasi terkait kegiatan TEDxUniversitasBrawijaya2021</li>
       <li>Mohon tidak melanggar <a href="{{ asset('pdf/ketentuan-ticket.pdf') }}">Syarat dan Ketentuan</a> yang berlaku.</li>
       <li>Tiket digunakan ketika hari livestreaming dimulai dengan memberikan token dan kode tiket yang tertera pada tiket dibeli dan terverifikasi.</li>
-      <li>Mohon ikuti panduan livestream terkait penggunaan token dan kode tiket <a href="{{ asset('pdf/ketentuan-livestreaming.pdf') }}">disini</a></li>
+      <li>Mohon ikuti panduan livestream terkait penggunaan token dan kode tiket <a href="{{ asset('pdf/ketentuan-livestream.pdf') }}">disini</a></li>
     </ul>
   </section>
 
