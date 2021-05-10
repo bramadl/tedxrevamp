@@ -31,17 +31,7 @@ class SpeakerController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        $request->validate([
-            'first_name' => 'required|string|max:20',
-            'last_name' => 'nullable|string|max:30',
-            'email_address' => 'required|string|email|unique:users',
-            'phone_number' => [
-                'nullable', 'string', 'regex:/^(\+62|62)?[\s-]?0?8[1-9]{1}\d{1}[\s-]?\d{3,8}$/'
-            ],
-            'street_address' => 'nullable|string'
-        ]);
-        
+    {   
         $password = Str::random(16);
         $speaker = User::create([
             'first_name' => $request->first_name,

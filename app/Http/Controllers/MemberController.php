@@ -42,7 +42,7 @@ class MemberController extends Controller
         $user->save();
         
         return redirect()
-                ->route('member.profile')
+                ->route('member.dashboard')
                 ->with('success', 'Akun berhasil diperbaharui!');
     }
 
@@ -53,10 +53,15 @@ class MemberController extends Controller
                                     $query->where('user_id', Auth::id());
                                 })
                                 ->first();
+        if (!$userTicket) {
+            return redirect()
+                    ->route('member.ticket')
+                    ->with('warning', 'Kamu belum melakukan pembelian tiket.');
+        }
 
         $refreshToken = RefreshToken::where('user_ticket_id', $userTicket->id)->first();
         if ($refreshToken) {
-            if ($userTicket->refresh_token) {
+            if (!$userTicket->refresh_token) {
                 return redirect()
                     ->back()
                     ->with('warning', 'Permintaan token hanya bisa dilakukan sekali.');

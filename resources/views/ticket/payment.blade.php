@@ -62,3 +62,14 @@
   <button type="submit">Lanjutkan Pembayaran</button>
 </form>
 @endsection
+
+@push('scripts')
+@error('payment_proof')
+<script>
+  Toast.fire({
+    icon: 'error',
+    title: @json($message)
+  })
+</script>
+@enderror
+@endpush
