@@ -33,6 +33,10 @@ class PaymentController extends Controller
         $payment->save();
 
         $ticket = Ticket::find($payment->ticket_id);
+        if ($paymentStatus === 'declined') {
+            $ticket->stock = $ticket->stock + 1;
+            $ticket->save();
+        }
 
         $user = $payment->user;
         
