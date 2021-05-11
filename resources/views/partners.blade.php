@@ -25,7 +25,7 @@
     @foreach ($partners as $partner)
     <div class="tedx_section_image_partners_content" data-scroll>
         <div class="_tedx_partner_image_wrapper">
-            <img src="{{ url(env('TEDXBRAWIJAYA_URL') . '/storage/brands/' . $partner->avatar) }}" alt="">
+            <img src="{{ env('TEDXBRAWIJAYA_URL') }}/storage/brands/{{ $partner->avatar }}" alt="">
         </div>
         <div class="_tedx_partner_profile_wrapper">
             <h1>{{ $partner->name }}</h1>
@@ -38,47 +38,5 @@
         </div>
     </div>
     @endforeach
-    <!-- <div class="tedx_section_image_partners_content" data-scroll data-scroll-speed="1">
-        <div class="_tedx_partner_image_wrapper">
-            <img src="{{ asset('img/cocacola.png') }}" alt="">
-        </div>
-        <div class="_tedx_partner_profile_wrapper">
-            <h1>Coca Cola</h1>
-            <ul class="a">
-                <li><span cursor-class="subtle">Sponsor</span></li>
-                <li><a href="" cursor-class="hover">Instagram</a></li>
-                <li><a href="" cursor-class="hover">Facebook</a></li>
-                <li><a href="" cursor-class="hover">Whatsapp</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="tedx_section_image_partners_content">
-        <div class="_tedx_partner_image_wrapper">
-            <img src="{{ asset('img/cocacola.png') }}" alt="">
-        </div>
-        <div class="_tedx_partner_profile_wrapper">
-            <h1>Coca Cola</h1>
-            <ul class="a">
-                <li><span cursor-class="subtle">Supported By</span></li>
-                <li><a href="" cursor-class="hover">Instagram</a></li>
-                <li><a href="" cursor-class="hover">Facebook</a></li>
-                <li><a href="" cursor-class="hover">Whatsapp</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="tedx_section_image_partners_content" data-scroll data-scroll-speed="2">
-        <div class="_tedx_partner_image_wrapper">
-            <img src="{{ asset('img/cocacola.png') }}" alt="">
-        </div>
-        <div class="_tedx_partner_profile_wrapper">
-            <h1>Coca Cola</h1>
-            <ul class="a">
-                <li><span cursor-class="subtle">Partnership</span></li>
-                <li><a href="" cursor-class="hover">Instagram</a></li>
-                <li><a href="" cursor-class="hover">Facebook</a></li>
-                <li><a href="" cursor-class="hover">Whatsapp</a></li>
-            </ul>
-        </div>
-    </div> -->
 </section>
 @endsection
