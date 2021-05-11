@@ -69,7 +69,9 @@
 
                     span {
                         font-size: 1.3rem;
-                        white-space: nowrap;
+                        @include lg {
+                            white-space: nowrap;
+                        }
                     }
                 }
 

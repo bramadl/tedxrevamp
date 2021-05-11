@@ -40,7 +40,7 @@
             <label for="password" class="_tedx_link">
                 <p>Password</p>
             </label>
-            <input type="password" name="password" placeholder="Kosongkan jika tidak dirubah">
+            <input type="password" name="password" placeholder="Kosongkan jika tidak diubah">
             @error('password')
                 <span class="text-error-alt">{{ $message }}</span>
             @enderror

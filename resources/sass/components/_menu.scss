@@ -40,7 +40,6 @@
                     text-decoration: none;
                     color: $white-50;
                     transition: .4s $cubiz-bezier;
-                    cursor: none !important;
     
                     &:hover {
                         color: $white;
@@ -97,6 +96,7 @@
                     font-family: 'Open Sans', sans-serif;
                     color: $white-50;
                     transition: .4s $cubiz-bezier;
+                    cursor: pointer;
 
                     &:hover {
                         color: $white;

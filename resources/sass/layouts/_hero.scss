@@ -55,6 +55,7 @@
         font-weight: 300;
         text-decoration: none;
         transition: .4s $cubiz-bezier;
+        cursor: pointer;
 
         &:hover {
           background: $white;
