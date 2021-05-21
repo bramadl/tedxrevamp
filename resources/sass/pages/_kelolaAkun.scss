@@ -1,0 +1,9 @@
+._tedx_wrapper_form {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  @include lg { grid-template-columns: repeat(2, 1fr); }
+  grid-gap: 2rem 25px;
+  @include md { grid-gap: 2rem 50px; }
+  @include lg { grid-gap: 2rem 75px; }
+  @include xl { grid-gap: 2rem 100px; }
+}

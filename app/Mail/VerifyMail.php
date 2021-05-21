@@ -30,7 +30,8 @@ class VerifyMail extends Mailable
      */
     public function build()
     {
-        return $this->from('tedxbrawijaya@gmail.com')
-                    ->view('auth.verify-user');
+        $this->from($address = 'technical.tedxbrawijaya@gmail.com', $name = 'TEDxUniversitasBrawijaya2021')
+                ->subject('Verifikasi Akun TEDxUniversitasBrawijaya2021')
+                ->view('auth.verify-user');
     }
 }

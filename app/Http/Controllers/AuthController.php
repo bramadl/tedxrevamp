@@ -29,7 +29,8 @@ class AuthController extends Controller
             'last_name' => $validated['last_name'],
             'email_address' => $validated['email_address'],
             'password' => Hash::make($validated['password']),
-            'phone_number' => $validated['phone_number']
+            'phone_number' => $validated['phone_number'],
+            'role' => 'user'
         ];
 
         $user = User::create($data);
@@ -181,7 +182,7 @@ class AuthController extends Controller
             $user = Auth::user();
             return redirect()
                     ->intended('member/dashboard')
-                    ->with('status', 'Selamat datang, ' . $user->first_name . $user->last_name . '!');
+                    ->with('success', 'Selamat datang, ' . $user->first_name . $user->last_name . '!');
         } else {
             return redirect()
                     ->back()

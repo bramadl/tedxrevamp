@@ -12,7 +12,7 @@
       </h1>
     </div>
     <div class="_tedx_subtitle">
-      <h2>Membicarakan yang dibicarakan manusia</h2>
+      <h2>Yang Dibicarakan Ketika Membicarakan Manusia</h2>
     </div>
     <div class="_tedx_register_cta">
       <button cursor-class="hover">Beli Tiket</button>
@@ -35,7 +35,7 @@
       <line opacity="0.5" x1="0.5" y1="2.18557e-08" x2="0.499993" y2="150" stroke="white" />
     </svg>
     <div class="text">
-      May 30, 2021
+      29 - 30 Mei 2021
     </div>
   </div>
 </div>
@@ -62,9 +62,9 @@
       </div>
     </div>
     <div class="_tedx_section_about_cta">
-      <div class="_tedx_link" cursor-class="hover"><a href="{{ url('/about') }}">About TED</a></div>
+      <div class="_tedx_link" cursor-class="hover"><a href="{{ url('/about#ted') }}">About TED</a></div>
       <div class="_tedx_link" cursor-class="hover"><a href="{{ url('/about') }}">About TEDxUniversitasBrawijaya</a></div>
-      <div class="_tedx_link" cursor-class="hover"><a href="{{ url('/about') }}">About TEDx</a></div>
+      <div class="_tedx_link" cursor-class="hover"><a href="{{ url('/about#tedx') }}">About TEDx</a></div>
     </div>
   </div>
 </section>
@@ -75,7 +75,7 @@
     <div class="_tedx_video_mask">
       <div class="_tedx_video_text">
         <h1><span>TEDx</span>UniversitasBrawijaya</h1>
-        <h2>Teaser Video</h2>
+        <h2>Manifestasi Peradaban: Yang Dibicarakan Ketika Membicarakan Manusia</h2>
         <button cursor-class="hover" class="open-video-player">Play Video</button>
       </div>
     </div>
@@ -91,7 +91,7 @@
       </div>
       <div class="_tedx_section_text">
         <h3>Tema: Manifestasi Peradaban</h3>
-        <p>Peradaban dimaknai sebagai pola kebudayaan yang terstruktur dalam menilai tingkatan suatu budaya di masyarakat. TEDx Universitas Brawijaya 2021 menghadirkan para pembicara terbaik di bidangnya yang akan berbagi gagasan dan pengalaman denganmu untuk merayakan manifestasi peradaban.</p>
+        <p>Peradaban dimaknai sebagai pola kebudayaan yang terstruktur dalam menilai tingkatan suatu budaya di masyarakat. TEDxUniversitasBrawijaya 2021 menghadirkan para pembicara terbaik di bidangnya yang akan berbagi gagasan dan pengalaman denganmu untuk merayakan Manifestasi Peradaban.</p>
       </div>
     </div>
   </div>
@@ -142,7 +142,7 @@
       <div class="_tedx_speaker_avatar" data-target="clara" cursor-class="speaker">
         <img src="https://ik.imagekit.io/tedxub/clara_lMJ9QkOIr3X.jpg">
         <div class="_tedx_speaker_info">
-          <h1>Clara Tunjung Pramesti</h1>
+          <h1>Clara Tunjung Paramesti</h1>
           <p>Mahasiswa</p>
         </div>
       </div>
@@ -230,7 +230,7 @@
       </div>
       <div class="_tedx_section_text">
         <h3>PRESALE TICKETS</h3>
-        <p>Pesan tiket Presale 1 pada tanggal 11-17 Mei sekarang untuk mendapatkan penawaran menarik! Kesempatan terakhir! Beli tiket Presale 2 pada tanggal 18-24 Mei sekarang untuk mengisi kursi terbatas.
+        <p>Pesan tiket Presale 1 pada tanggal 11-17 Mei sekarang untuk mendapatkan penawaran menarik! <br> Kesempatan terakhir! Beli tiket Presale 2 pada tanggal 18-24 Mei sekarang untuk mengisi kursi terbatas.
         </p>
       </div>
     </div>
@@ -287,7 +287,7 @@
           <span>A2XX XXXX XXXX XXA2</span>
         </div>
       </div>
-      <svg class="_tedx_ticker_right" viewBox="0 0 386 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg class="_tedx_ticket_right" viewBox="0 0 386 400" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path opacity="0.75" d="M0.206634 399.609L110.914 199.915L0.0834961 0H162.246L191.995 53.6622L221.745 0H371.999C375.772 0 385.464 0 385.464 0L273.076 199.915L385.311 399.609C385.311 399.609 375.732 399.609 371.999 399.609H221.622L191.995 346.168L162.369 399.609H0.206634Z" fill="#B82B2B" />
         <line x1="1" y1="-1" x2="198.851" y2="-1" transform="matrix(0.48773 0.872994 -0.873401 0.487002 14 24.9756)" stroke="white" stroke-width="2" stroke-linecap="round" />
         <line x1="1" y1="-1" x2="88.9328" y2="-1" transform="matrix(-0.48773 0.872994 0.873401 0.487002 371.473 24.9756)" stroke="white" stroke-width="2" stroke-linecap="round" />

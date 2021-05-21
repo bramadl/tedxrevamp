@@ -15,6 +15,10 @@
 @import "pages/faq";
 @import "pages/auth";
 @import "pages/dashboard";
+@import "pages/token";
+
+@import "pages/pembelianTicket";
+@import "pages/kelolaAkun";
 
 // Sections
 @import "sections/videoTeaser";
@@ -31,6 +35,9 @@
 @import "components/link";
 @import "components/menu";
 @import "components/title";
+@import "components/ticket";
+@import "components/form";
+@import "components/preloader";
 
 body {
     font-family: 'Open Sans', sans-serif;

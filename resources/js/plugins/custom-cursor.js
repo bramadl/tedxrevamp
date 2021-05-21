@@ -21,8 +21,8 @@ function getSqueeze(diffX, diffY) {
   const distance = Math.sqrt(
     Math.pow(diffX, 2) + Math.pow(diffY, 2)
   );
-  const maxSqueeze = 0.15;
-  const accelerator = 1500;
+  const maxSqueeze = 0.25;
+  const accelerator = 2000;
   return Math.min(distance / accelerator, maxSqueeze);
 }
 

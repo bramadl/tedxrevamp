@@ -4,6 +4,7 @@ require("./bootstrap");
 // Required Plugins
 import scroller from "./plugins/locomotiveScroll";
 require("./plugins/custom-cursor");
+require("./plugins/preloader");
 
 // Home Page
 require("./modules/menu");

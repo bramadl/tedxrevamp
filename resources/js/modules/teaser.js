@@ -42,8 +42,7 @@ if (videoTeaser && videoMask && videoText) {
     .to(
       videoText,
       {
-        opacity: 1,
-        y: '-50%'
+        opacity: 1
       },
       '<'
     ),
