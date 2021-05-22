@@ -1,0 +1,53 @@
+._tedx_section_livestream {
+    display: flex;
+    flex-direction: column; 
+    font-family: 'Open Sans', sans-serif;
+
+    ._tedx_section_livestream_title {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+        line-height: 1.5rem;
+
+        @include md {
+            font-size: 1.5rem;
+        }
+
+        @include lg {
+            font-size: 3rem;
+            line-height: 3rem;
+        }
+
+        ._tedx_title_bold {
+            font-weight: bold;
+        }
+        span {
+            color: $red;
+        }
+
+    }
+    ._tedx_section_livestream_content {
+        // border: 1px solid red;
+        font-size: .75rem;
+        line-height: 1rem;
+        color: $white-75;
+
+        @include lg {
+            font-size: 1rem;
+        }
+    }
+
+}
+._tedx_livestream_video_wrapper {
+    border: 2px solid $red-50;
+
+    width: 100%;
+    height: auto;
+
+    img {
+        width: 100%;
+        min-height: auto;
+        overflow: hidden;
+        z-index: -1;
+        
+    }
+}
