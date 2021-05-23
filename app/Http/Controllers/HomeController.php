@@ -14,7 +14,9 @@ class HomeController extends Controller
         $presaleOneStartDate = date('Y-m-d', strtotime('2021-05-11'));
         $presaleOneEndDate = date('Y-m-d', strtotime('2021-05-17'));
         $presaleTwoStartDate = date('Y-m-d', strtotime('2021-05-18'));
-        $presaleTwoEndDate = date('Y-m-d', strtotime('2021-05-24'));
+        $presaleTwoEndDate = date('Y-m-d', strtotime('2021-05-22'));
+        $presaleThreeStartDate = date('Y-m-d', strtotime('2021-05-23'));
+        $presaleThreeEndDate = date('Y-m-d', strtotime('2021-05-27'));
 
         if (
             (date('Y-m-d', strtotime($date . " + 1 days")) >= $presaleOneStartDate) &&
@@ -26,6 +28,11 @@ class HomeController extends Controller
             (date('Y-m-d', strtotime($date . " + 1 days")) <= $presaleTwoEndDate)
         ) {
             return 'presale-2';
+        } else if (
+            (date('Y-m-d', strtotime($date . " + 1 days")) >= $presaleThreeStartDate) &&
+            (date('Y-m-d', strtotime($date . " + 1 days")) <= $presaleThreeEndDate)
+        ) {
+            return 'presale-3';
         } else {
             return null;
         }
