@@ -16,7 +16,7 @@
             <p>Kunjungi pameran karya terbaik dari Loka Hasta Karya dengan pengalaman virtual.</p>
         </div>
         <div class="_tedx_link_alt">
-            <a href="" cursor-class="link">Kunjungi Pameran</a>
+            <a target="_blank" href="https://hubs.mozilla.com/9tGCMJb/loka-hasta-karya" cursor-class="link">Kunjungi Pameran</a>
         </div>
     </div>
     @if (Auth::user()->role === 'user')
