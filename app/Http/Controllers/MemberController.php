@@ -161,6 +161,6 @@ class MemberController extends Controller
         $userTicket->refresh_token = 1;
         $userTicket->save();
 
-        return "Selamat datang di livestream!";
+        return view('member.livestream');
     }
 }

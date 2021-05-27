@@ -22,7 +22,18 @@ class TicketController extends Controller
         $hashThree = null;
         $hashFour = null;
 
-        $hashOne = $ticket->type === 'presale-1' ? 'A' : 'B';
+        switch ($ticket->type) {
+            case 'presale-1':
+                $hashOne = 'A';
+                break;
+            case 'presale-2':
+                $hashOne = 'B';
+                break;
+            case 'presale-3':
+                $hashOne = 'C';
+                break;
+        }
+        
         $hashOne .= substr($token, 0, 3);
 
         $hashTwo = substr($token, 8, 4);
@@ -41,6 +52,8 @@ class TicketController extends Controller
         $presaleOneEndDate = date('Y-m-d', strtotime('2021-05-17'));
         $presaleTwoStartDate = date('Y-m-d', strtotime('2021-05-18'));
         $presaleTwoEndDate = date('Y-m-d', strtotime('2021-05-24'));
+        $presaleThreeStartDate = date('Y-m-d', strtotime('2021-05-23'));
+        $presaleThreeEndDate = date('Y-m-d', strtotime('2021-06-01'));
 
         if (
             (date('Y-m-d', strtotime($date . " + 1 days")) >= $presaleOneStartDate) &&
@@ -52,6 +65,11 @@ class TicketController extends Controller
             (date('Y-m-d', strtotime($date . " + 1 days")) <= $presaleTwoEndDate)
         ) {
             return 'presale-2';
+        } else if (
+            (date('Y-m-d', strtotime($date . " + 1 days")) >= $presaleThreeStartDate) &&
+            (date('Y-m-d', strtotime($date . " + 1 days")) <= $presaleThreeEndDate)
+        ) {
+            return 'presale-3';
         } else {
             return null;
         }

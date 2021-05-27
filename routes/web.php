@@ -22,6 +22,7 @@ Route::get('/partners', 'HomeController@partners');
 Route::get('/faqs', 'HomeController@faqs');
 Route::get('/core/{name}/profile', 'HomeController@coreProfile');
 Route::view('/token', 'member.token');
+Route::view('/livestream', 'livestream');
 
 Route::group(['middleware' => ['verified']], function () {
   Route::get('/ticket/payment', 'TicketController@payment')->name('payment');
