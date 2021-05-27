@@ -243,12 +243,30 @@
     <div class="_tedx_ticket_detail">
       <div class="_tedx_ticket_description">
         <div>
-          <h3><span>Ticket</span> Presale {{ $ticket->type === 'presale-1' ? '1' : '2' }}</h3>
+          <h3><span>Ticket</span> Presale 
+            @switch($ticket->type)
+            @case('presale-1')
+                1
+            @break
+
+            @case('presale-2')
+                2
+            @break
+
+            @default
+                3
+            @endswitch
+          </h3>
         </div>
         <div>
           <p>{{ $ticket->description }}</p>
           <br>
-          <p>TED Talks | Virtual Exhibition | TED Kit | Special Performance</p>
+          <p>TED Talks | Virtual Exhibition | 
+            @if ($ticket->type == 'presale-1' || $ticket->type == 'presale-2')
+            TED Kit |
+            @endif
+            Special Performance
+          </p>
         </div>
         <div>
           <a href="{{ asset('pdf/ketentuan-ticket.pdf') }}" cursor-class="hover">Syarat dan Ketentuan</a>
