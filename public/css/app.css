@@ -2048,62 +2048,89 @@ textarea {
   margin: 0 1rem;
 }
 
-._tedx_section_livestream {
-  display: flex;
-  flex-direction: column;
-  font-family: "Open Sans", sans-serif;
-}
-
-._tedx_section_livestream ._tedx_section_livestream_title {
-  font-size: 1rem;
-  margin-bottom: 2rem;
-  line-height: 1.5rem;
+._tedx_section_title_overlay.livestream {
+  padding: 25px 0 25px;
 }
 
 @media only screen and (min-width: 768px) {
-  ._tedx_section_livestream ._tedx_section_livestream_title {
-    font-size: 1.5rem;
+  ._tedx_section_title_overlay.livestream ._tedx_section_title.livestream h2 {
+    font-size: 6rem;
   }
 }
 
 @media only screen and (min-width: 996px) {
-  ._tedx_section_livestream ._tedx_section_livestream_title {
-    font-size: 3rem;
-    line-height: 3rem;
+  ._tedx_section_title_overlay.livestream ._tedx_section_title.livestream h2 {
+    font-size: 10rem;
   }
 }
 
-._tedx_section_livestream ._tedx_section_livestream_title ._tedx_title_bold {
+._tedx_livestream_container {
+  border-radius: 0.5rem;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), #751b1b);
+  padding: 1rem;
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_livestream_container {
+    display: grid;
+    grid-template-areas: "video title" "video livechat";
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 1rem;
+  }
+}
+
+._tedx_livestream_container ._tedx_livestream_header {
+  text-align: center;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: #000;
+  grid-area: title;
+}
+
+._tedx_livestream_container ._tedx_livestream_header h1 {
   font-weight: bold;
 }
 
-._tedx_section_livestream ._tedx_section_livestream_title span {
+._tedx_livestream_container ._tedx_livestream_header h1 span {
   color: #B82B2B;
 }
 
-._tedx_section_livestream ._tedx_section_livestream_content {
-  font-size: 0.75rem;
-  line-height: 1rem;
-  color: rgba(255, 255, 255, 0.75);
+._tedx_livestream_container ._tedx_livestream_header h2 {
+  font-weight: lighter;
 }
 
-@media only screen and (min-width: 996px) {
-  ._tedx_section_livestream ._tedx_section_livestream_content {
-    font-size: 1rem;
+._tedx_livestream_container ._tedx_livestream_video_container {
+  margin: 1rem 0;
+  grid-area: video;
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_livestream_container ._tedx_livestream_video_container #svp_player6p9l3b93bg8w {
+    height: 500px !important;
   }
 }
 
-._tedx_livestream_video_wrapper {
-  border: 2px solid rgba(184, 43, 43, 0.5);
-  width: 100%;
-  height: auto;
+@media only screen and (min-width: 768px) {
+  ._tedx_livestream_container ._tedx_livestream_video_container {
+    height: 500px;
+    margin: 0;
+  }
 }
 
-._tedx_livestream_video_wrapper img {
+._tedx_livestream_container ._tedx_livestream_livechat {
+  grid-area: livechat;
+}
+
+._tedx_livestream_container ._tedx_livestream_livechat iframe {
   width: 100%;
-  min-height: auto;
-  overflow: hidden;
-  z-index: -1;
+  height: 360px;
+  border-radius: 0.5rem;
+}
+
+@media only screen and (min-width: 768px) {
+  ._tedx_livestream_container ._tedx_livestream_livechat iframe {
+    height: 400px;
+  }
 }
 
 ._tedx_tickets_info_wrapper {

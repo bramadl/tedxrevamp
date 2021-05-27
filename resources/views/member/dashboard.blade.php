@@ -42,8 +42,7 @@
             <p>Kunjungi pameran karya terbaik dari Loka Hasta Karya dengan pengalaman virtual.</p>
         </div>
         <div class="_tedx_link_alt">
-            <!-- <a href="{{ url('member/livestream') }}" cursor-class="link">Masuk Livestream</a> -->
-            <a href="{{ url('/member/dashboard') }}" cursor-class="link">Masuk Livestream</a>
+            <a href="{{ url('member/livestream') }}" cursor-class="link">Masuk Livestream</a>
         </div>
     </div>
     @if (Auth::user()->role === 'core' || Auth::user()->role === 'volunteer')
