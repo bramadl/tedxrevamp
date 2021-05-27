@@ -33,7 +33,6 @@ class TicketController extends Controller
                 $hashOne = 'C';
                 break;
         }
-        
         $hashOne .= substr($token, 0, 3);
 
         $hashTwo = substr($token, 8, 4);
@@ -51,7 +50,7 @@ class TicketController extends Controller
         $presaleOneStartDate = date('Y-m-d', strtotime('2021-05-11'));
         $presaleOneEndDate = date('Y-m-d', strtotime('2021-05-17'));
         $presaleTwoStartDate = date('Y-m-d', strtotime('2021-05-18'));
-        $presaleTwoEndDate = date('Y-m-d', strtotime('2021-05-24'));
+        $presaleTwoEndDate = date('Y-m-d', strtotime('2021-05-22'));
         $presaleThreeStartDate = date('Y-m-d', strtotime('2021-05-23'));
         $presaleThreeEndDate = date('Y-m-d', strtotime('2021-06-01'));
 
@@ -101,10 +100,10 @@ class TicketController extends Controller
                     ->with('info', 'Mohon maaf tiket sudah habis terjual.');
         }
 
-        if (!$user->street_address) {
+        if ((!$user->street_address && $ticket->type == 'presale-1') || (!$user->street_address && $ticket->type == 'presale-2')) {
             return redirect()
-                    ->route('member.profile')
-                    ->with('warning', 'Mohon isi alamat terlebih dahulu.');
+                ->route('member.profile')
+                ->with('warning', 'Mohon isi alamat terlebih dahulu.');
         }
 
         return view('ticket.payment', [

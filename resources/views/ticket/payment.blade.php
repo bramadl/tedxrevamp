@@ -35,10 +35,12 @@
       <label for="phone_number">Nomor Telepon</label>
       <input type="text" name="phone_number" value="{{ $user->phone_number }}" id="phone_number" readonly>
     </div>
+    @if ($ticket->type == 'presale-1' || $ticket->type == 'presale-2')
     <div class="_tedx_payment_form_group address">
       <label for="street_address">Alamat Rumah</label>
       <textarea name="street_address" readonly id="street_address" cols="30" rows="10">{{ $user->street_address }}</textarea>
     </div>
+    @endif
     <div class="_tedx_payment_form_group ticketType">
       <label for="type">Tipe Tiket</label>
       <input type="text" name="type" value="{{ $ticket->type }}" id="type" readonly>

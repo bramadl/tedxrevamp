@@ -33,8 +33,7 @@ class HomeController extends Controller
             (date('Y-m-d', strtotime($date . " + 1 days")) <= $presaleThreeEndDate)
         ) {
             return 'presale-3';
-        }
-        else {
+        } else {
             return null;
         }
     }
