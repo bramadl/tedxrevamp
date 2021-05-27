@@ -16,7 +16,7 @@ class HomeController extends Controller
         $presaleTwoStartDate = date('Y-m-d', strtotime('2021-05-18'));
         $presaleTwoEndDate = date('Y-m-d', strtotime('2021-05-22'));
         $presaleThreeStartDate = date('Y-m-d', strtotime('2021-05-23'));
-        $presaleThreeEndDate = date('Y-m-d', strtotime('2021-05-27'));
+        $presaleThreeEndDate = date('Y-m-d', strtotime('2021-06-01'));
 
         if (
             (date('Y-m-d', strtotime($date . " + 1 days")) >= $presaleOneStartDate) &&
